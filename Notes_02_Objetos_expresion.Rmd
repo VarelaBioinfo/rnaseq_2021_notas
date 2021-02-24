@@ -1,0 +1,178 @@
+# RNA-seq workflow: gene-level exploratory analysis and differential expression
+
+## Summarized Experiment (tipo de objeto)
+Construido con programación orientada a objetos 
+
+- Core
+  - rowRanges
+    - Tabla de info de los genes 
+    - 1 rengón por cada gen 
+    - columnas son info de los genes 
+  - assay (counts)
+    - 1 renglon por gen 
+    - 1 columna por muestra 
+  - colData
+    - 1 renglón por cada muestra 
+    - 1 columna por cada variable de info para las muestras 
+    
+## Genomic Ranges (tipo de objeto) 
+Diseñada para almacenar de forma eficiente información sobre los genes 
+- renglones el gen 
+- columnas región del genoma, contenido de GC score 
+- Lee formato BED 
+- Lee formatos GTF 
+
+Si alguno se le hace más fácil seguir el código en su Rstudio, pueden irse a la terminal (que está a lado de la consola ) y darle wget https://raw.githubusercontent.com/lcolladotor/rnaseq_LCG-UNAM_2021/master/03_SummarizedExperiment.Rmd   para que les ponga ahí solo ese código y lo puedan cargar
+
+
+
+```{r}
+library(SummarizedExperiment)
+## ?SummarizedExperiment
+
+## De los ejemplos en la ayuda oficial
+
+## Creamos los datos para nuestro objeto de tipo SummarizedExperiment
+## para 200 genes a lo largo de 6 muestras
+nrows <- 200
+ncols <- 6
+## Números al azar de cuentas
+set.seed(20210223)
+counts <- matrix(runif(nrows * ncols, 1, 1e4), nrows)
+## Información de nuestros genes
+rowRanges <- GRanges(
+    rep(c("chr1", "chr2"), c(50, 150)),
+    IRanges(floor(runif(200, 1e5, 1e6)), width = 100),
+    strand = sample(c("+", "-"), 200, TRUE),
+    feature_id = sprintf("ID%03d", 1:200)
+)
+names(rowRanges) <- paste0("gene_", seq_len(length(rowRanges)))
+## Información de nuestras muestras
+colData <- DataFrame(
+    Treatment = rep(c("ChIP", "Input"), 3),
+    row.names = LETTERS[1:6]
+)
+## Juntamos ahora toda la información en un solo objeto de R
+rse <- SummarizedExperiment(
+    assays = SimpleList(counts = counts),
+    rowRanges = rowRanges,
+    colData = colData
+)
+## Exploremos el objeto resultante
+rse
+
+## Número de genes y muestras
+# 200 genes a lo largo de 6 muestras
+dim(rse)
+
+## IDs de nuestros genes y muestras
+# gene_1, gene_2
+dimnames(rse)
+
+## Nombres de tablas de cuentas que tenemos (RPKM, CPM, counts, logcounts, etc)
+assayNames(rse)
+
+## El inicio de nuestra tabla de cuentas
+head(assay(rse))
+
+## Información de los genes en un objeto de Bioconductor
+rowRanges(rse)
+
+## Tabla con información de los genes
+rowData(rse) # es idéntico a 'mcols(rowRanges(rse))'
+
+## Tabla con información de las muestras
+colData(rse)
+
+# Es como hacer el unique de los seq names 
+# te da el nombre de todos los cromosomas 
+seqlevels(rse)
+
+# el número de todos los cromosomas 
+length(seqlevels(sce))
+
+# vector comprimido para hacerlo más eficiente 
+unique(as.vector(seqnames(rowRanges(rse))))
+
+## ver el tamaño en gigas del objeto 
+# pryr::object_size(sce)
+```
+Counts son lecturas que sobrelapan ese gen 
+
+## Ejercicio 
+
+¿Qué es lo que pasa en esos dos comandos?
+```{r}
+## ----rse_exercise-------------------------------------------------------------------------------------------------------------
+## Comando 1
+# Se toman los genes 1 y 2 en todas las muestras 
+# Se asegura de que haga el subconjunto adecuado en todas las tablas 
+rse[1:2, ]
+
+## Comando 2
+# Se accede a las muestras A,D,F de todos los genes 
+# Es posible debido a que en el objeto rse tenemos nombres de todas las muestras 
+rse[, c("A", "D", "F")]
+which(colnames(rse)%in%c("A","D","F"))
+
+# Salen todos los valores de la columna treatment que está definido en la tabla de colData
+rse$Treatment
+
+args(assay)
+assay(rse)
+assay(rse, "counts")
+# Saber si herendan el objeto summarized experiment para poder utilizar isee
+#inherits(sce, "SummarizedExperiment")
+
+## ----isee_basic, eval = FALSE-------------------------------------------------------------------------------------------------
+## ## Explora el objeto rse de forma interactiva
+library("iSEE")
+iSEE::iSEE(rse)
+
+
+## ----download_sce_layer-------------------------------------------------------------------------------------------------------
+## Descarguemos unos datos de spatialLIBD
+sce_layer <- spatialLIBD::fetch_data("sce_layer")
+sce_layer
+
+## Revisemos el tamaño de este objeto
+pryr::object_size(sce_layer)
+
+
+## ----explore_sce_layer, eval = FALSE------------------------------------------------------------------------------------------
+## iSEE::iSEE(sce_layer)
+
+```
+Shinny apps para crear apps en Rstudio 
+
+https://www.shinyapps.io/
+
+```{r}
+## ----isee_basic, eval = FALSE-------------------------------------------------------------------------------------------------
+## ## Explora el objeto rse de forma interactiva
+library("iSEE")
+iSEE::iSEE(rse)
+
+
+## ----download_sce_layer-------------------------------------------------------------------------------------------------------
+## Descarguemos unos datos de spatialLIBD
+sce_layer <- spatialLIBD::fetch_data("sce_layer")
+sce_layer
+
+## Revisemos el tamaño de este objeto
+pryr::object_size(sce_layer)
+
+
+## ----explore_sce_layer, eval = FALSE------------------------------------------------------------------------------------------
+## iSEE::iSEE(sce_layer)
+
+```
+
+
+# Ejercicio Reproducir imagen en 3.4 y agregar a repositorio
+
+![PCA1vs2](/Users/avarela/rnaseq_2021_notas/R/ReducedDimensionPlot1.pdf)
+
+# Ejercicio 2 Realizar el heatmap 
+MBP y MOBP son los que más se relacionan en White Matter
+![MOBP_MBP_PCP4](/Users/avarela/rnaseq_2021_notas/R/ComplexHeatmapPlot1.pdf)
