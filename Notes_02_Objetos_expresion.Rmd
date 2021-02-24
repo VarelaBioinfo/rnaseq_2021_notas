@@ -176,3 +176,90 @@ pryr::object_size(sce_layer)
 # Ejercicio 2 Realizar el heatmap 
 MBP y MOBP son los que más se relacionan en White Matter
 ![MOBP_MBP_PCP4](/Users/avarela/rnaseq_2021_notas/R/ComplexHeatmapPlot1.pdf)
+
+# Proyecto Recount 
+- 70 mil muestras de RNA-seq uniformemente procesaadas
+- Democratización de los datos 
+- Cualquiera puede tener acceso a datos sin tener acceso a software 
+- recount workflow parquete de bioconductor 
+- Cuantificar niveles de expresión a lo largo de
+  - genes 
+  - exones 
+  - regiones sin anotación 
+ - Provienen de sequence read archive los datos crudos SRA
+ 
+ Se rediseña recount 2 a recount 3 ahora son 700 mil muestras 
+
+pkgdown permite hacer pagina web de paquetes de R 
+140 mil dolares 
+- 2 dolares por muestras en computo para procesar las muestras
+ 
+```{r eval=FALSE}
+library("recount3")
+
+## ----'quick_example'-------------------------------------------------------------------------------
+## Revisemos todos los proyectos con datos de humano en recount3
+human_projects <- available_projects()
+
+## Encuentra tu proyecto de interés. Aquí usaremos
+## SRP009615 de ejemplo
+proj_info <- subset(
+    human_projects,
+    project == "SRP009615" & project_type == "data_sources"
+)
+## Crea un objetio de tipo RangedSummarizedExperiment (RSE)
+## con la información a nivel de genes
+rse_gene_SRP009615 <- create_rse(proj_info)
+## Explora el objeto RSE
+rse_gene_SRP009615
+## ----"interactive_display", eval = FALSE-----------------------------------------------------------
+## ## Explora los proyectos disponibles de forma interactiva
+## proj_info_interactive <- interactiveDisplayBase::display(human_projects)
+## ## Selecciona un solo renglón en la tabla y da click en "send".
+## 
+## ## Aquí verificamos que solo seleccionaste un solo renglón.
+## stopifnot(nrow(proj_info_interactive) == 1)
+## ## Crea el objeto RSE
+## rse_gene_interactive <- create_rse(proj_info_interactive)
+
+
+## ----"tranform_counts"-----------------------------------------------------------------------------
+## Convirtamos las cuentas por nucleotido a cuentas por lectura
+## usando compute_read_counts().
+## Para otras transformaciones como RPKM y TPM, revisa transform_counts().
+assay(rse_gene_SRP009615, "counts") <-compute_read_counts(rse_gene_SRP009615)
+
+
+## ----"expand_attributes"---------------------------------------------------------------------------
+## Para este estudio en específico, hagamos más fácil de usar la
+## información del experimento
+rse_gene_SRP009615 <- expand_sra_attributes(rse_gene_SRP009615)
+colData(rse_gene_SRP009615)[
+    ,
+    grepl("^sra_attribute", colnames(colData(rse_gene_SRP009615)))
+]
+
+iSEE::iSEE(rse_gene_SRP009615)
+```
+
+# Ejercicio 
+
+```{r}
+ Encuentra tu proyecto de interés. Aquí usaremos
+## SRP009615 de ejemplo
+proj_info <- subset(
+    human_projects,
+    project == "SRP009615" & project_type == "data_sources"
+)
+
+## ----"tranform_counts"-----------------------------------------------------------------------------
+## Convirtamos las cuentas por nucleotido a cuentas por lectura
+## usando compute_read_counts().
+## Para otras transformaciones como RPKM y TPM, revisa transform_counts().
+assay(rse_gene_SRP009615, "counts") <- compute_read_counts(rse_gene_SRP009615)
+
+
+```
+
+
+ 
