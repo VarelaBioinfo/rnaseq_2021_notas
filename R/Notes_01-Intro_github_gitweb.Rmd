@@ -10,12 +10,76 @@ print("Soy Alfredo")
 dir.create(here::here("figuras"), showWarnings = FALSE)
 
 # Haver una imagen de ejemplo
-pdf(here::here("figuras ","mtcars_gear_vs_mpg.pdf"), useDingbats= FALSE)
+pdf(here::here("figuras","mtcars_gear_vs_mpg.pdf"), useDingbats= FALSE)
 ggplot(mtcars, aes(x = gear, y =mpg))+ geom_point()
 dev.off()
 # Para reproducir mi codigo
 options(width=120)
-sessioninfo::sesion_info()
+sessioninfo::session_info()
 
 ```
+
+# Bioconductor 
+- Repositorio de paquetes de R para análisis biológico
+- Versión 3.12 la más reciente 
+
+## 4tipos de paquetes 
+
+### Software 
+
+### Anotación 
+
+### Experiment Data 
+- Cuando quieres compartir datos 
+- Datos exhaustivos 
+
+## Workflows 
+- Describe como puedes usar varios paquetes de Bioconductor para análisis
+
+
+## SummarizedExperiment
+objeto de R que nos ayuda a agrupar información necesaria en análisis de expresión diferencial 
+
+
+## Para encontrar paquetes 
+- Checar la docuemtnación 
+- Que contesten a los usuarios
+
+## Dos versiones de Bioconductor (Release y Devel)
+
+## Actulaizaciones de R y Bioconductor 
+En abril y octurbe se actualiza bioconductor y R se actualiza 1 vez al año 
+
+
+# Paquetes en Equipo 
+
+BUENA {https://bioconductor.org/packages/3.12/bioc/html/VariantAnnotation.html}
+Este paquete es antiguo pero es una gran contribución a la comunidad, tanto que muchos otros paquetes son dependientes de este, volviéndolo una inclusión básica y necesaria para el desarrollo de investigaciones en R.
+Un gran punto sobre este proyecto es que contiene videos explicativos, como un tutorial para aprender las funciones básicas del paquete.
+Un punto a mejorar sería corregir los warnings en Windows y actualizarlo para versiones más actuales del mismo. 
+
+MALA {https://bioconductor.org/packages/release/data/experiment/manuals/RRBSdata/man/RRBSdata.pdf}
+La documentación es incompleta, carece de compatibilidad con plataformas que no sean ubuntu y no existe el github por lo tanto dificulta el contacto con los desarrolladores. 
+
+BUENA {https://bioconductor.org/packages/release/bioc/html/DECIPHER.html}
+La documentación de este paquete es muy abundante y clara, explica cada uno de sus módulos y tiene una presentación impecable. Además, es un paquete muy versátil que permite su uso en diversas áreas de investigación. 
+También debemos destacar que tiene importancia para otros paquetes, pues estos dependen o se basan en él.
+
+
+MALA
+ {https://bioconductor.org/packages/release/bioc/html/sangeranalyseR.html}
+A pesar de ser un paquete reciente, el autor no lo ha actualizado desde la primera versión.
+Tiene compatibilidad nula con diversas distribuciones de software, pues muestra warnings en check. Por su alta dependencia a otros paquetes parecería que es una colección de los mismos.  
+La documentación mostrada es muy poca, y los comentarios en el código fuente son inexistentes.
+
+BUENA {http://bioconductor.org/packages/3.12/bioc/html/IsoformSwitchAnalyzeR.html}
+Este paquete ha demostrado ser muy útil para varias herramientas de análisis, incluso contiene trabajos que lo citan en su página de bioconductor.
+Sí tiene GitHub para una comunicación con el desarrollador. Y se ha demostrado un uso constante del paquete, ya que contiene varios issues. También podemos encontrar que la mayoría de estos son sugerencias para eficientizar el código y no errores.
+Es un paquete accesible para citar y comunicarse con los desarrolladores. 
+
+MALA {http://bioconductor.org/packages/release/bioc/html/riboSeqR.html}
+No tiene soporte a pesar de ser antiguo, se nota que no ha sido actualizado.
+No es un paquete muy robusto en funcionalidad ni documentación. Es probable que ya no se le dé soporte actual. 
+
+
 

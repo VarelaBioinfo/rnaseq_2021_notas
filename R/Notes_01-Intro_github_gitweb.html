@@ -351,7 +351,134 @@ pre code {
 </div>
 
 
+<pre class="r"><code>library(&quot;sessioninfo&quot;)
+library(&quot;here&quot;)</code></pre>
+<pre><code>## here() starts at /Users/avarela/rnaseq_2021_notas</code></pre>
+<pre class="r"><code>library(&quot;ggplot2&quot;)
 
+## Hello world
+print(&quot;Soy Alfredo&quot;)</code></pre>
+<pre><code>## [1] &quot;Soy Alfredo&quot;</code></pre>
+<pre class="r"><code># Crear directorio para las figuras
+dir.create(here::here(&quot;figuras&quot;), showWarnings = FALSE)
+
+# Haver una imagen de ejemplo
+pdf(here::here(&quot;figuras&quot;,&quot;mtcars_gear_vs_mpg.pdf&quot;), useDingbats= FALSE)
+ggplot(mtcars, aes(x = gear, y =mpg))+ geom_point()
+dev.off()</code></pre>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<pre class="r"><code># Para reproducir mi codigo
+options(width=120)
+sessioninfo::session_info()</code></pre>
+<pre><code>## ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+##  setting  value                       
+##  version  R version 4.0.3 (2020-10-10)
+##  os       macOS Big Sur 10.16         
+##  system   x86_64, darwin17.0          
+##  ui       X11                         
+##  language (EN)                        
+##  collate  en_US.UTF-8                 
+##  ctype    en_US.UTF-8                 
+##  tz       America/Mexico_City         
+##  date     2021-02-23                  
+## 
+## ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+##  package     * version date       lib source        
+##  assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.0.2)
+##  bslib         0.2.4   2021-01-25 [1] CRAN (R 4.0.2)
+##  cli           2.3.0   2021-01-31 [1] CRAN (R 4.0.2)
+##  colorspace    2.0-0   2020-11-11 [1] CRAN (R 4.0.2)
+##  crayon        1.4.1   2021-02-08 [1] CRAN (R 4.0.2)
+##  DBI           1.1.1   2021-01-15 [1] CRAN (R 4.0.2)
+##  digest        0.6.27  2020-10-24 [1] CRAN (R 4.0.2)
+##  dplyr         1.0.4   2021-02-02 [1] CRAN (R 4.0.2)
+##  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.2)
+##  evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.1)
+##  fansi         0.4.2   2021-01-15 [1] CRAN (R 4.0.2)
+##  farver        2.0.3   2020-01-16 [1] CRAN (R 4.0.2)
+##  generics      0.1.0   2020-10-31 [1] CRAN (R 4.0.2)
+##  ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.2)
+##  glue          1.4.2   2020-08-27 [1] CRAN (R 4.0.2)
+##  gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.2)
+##  here        * 1.0.1   2020-12-13 [1] CRAN (R 4.0.2)
+##  htmltools     0.5.1.1 2021-01-22 [1] CRAN (R 4.0.2)
+##  jquerylib     0.1.3   2020-12-17 [1] CRAN (R 4.0.2)
+##  jsonlite      1.7.2   2020-12-09 [1] CRAN (R 4.0.3)
+##  knitr         1.31    2021-01-27 [1] CRAN (R 4.0.2)
+##  labeling      0.4.2   2020-10-20 [1] CRAN (R 4.0.2)
+##  lifecycle     1.0.0   2021-02-15 [1] CRAN (R 4.0.2)
+##  magrittr      2.0.1   2020-11-17 [1] CRAN (R 4.0.2)
+##  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.2)
+##  pillar        1.5.0   2021-02-22 [1] CRAN (R 4.0.3)
+##  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.2)
+##  purrr         0.3.4   2020-04-17 [1] CRAN (R 4.0.2)
+##  R6            2.5.0   2020-10-28 [1] CRAN (R 4.0.2)
+##  rlang         0.4.10  2020-12-30 [1] CRAN (R 4.0.2)
+##  rmarkdown     2.7     2021-02-19 [1] CRAN (R 4.0.3)
+##  rprojroot     2.0.2   2020-11-15 [1] CRAN (R 4.0.2)
+##  sass          0.3.1   2021-01-24 [1] CRAN (R 4.0.2)
+##  scales        1.1.1   2020-05-11 [1] CRAN (R 4.0.2)
+##  sessioninfo * 1.1.1   2018-11-05 [1] CRAN (R 4.0.2)
+##  stringi       1.5.3   2020-09-09 [1] CRAN (R 4.0.2)
+##  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.0.2)
+##  tibble        3.0.6   2021-01-29 [1] CRAN (R 4.0.2)
+##  tidyselect    1.1.0   2020-05-11 [1] CRAN (R 4.0.2)
+##  utf8          1.1.4   2018-05-24 [1] CRAN (R 4.0.2)
+##  vctrs         0.3.6   2020-12-17 [1] CRAN (R 4.0.2)
+##  withr         2.4.1   2021-01-26 [1] CRAN (R 4.0.2)
+##  xfun          0.21    2021-02-10 [1] CRAN (R 4.0.2)
+## 
+## [1] /Library/Frameworks/R.framework/Versions/4.0/Resources/library</code></pre>
+<p># Bioconductor - Repositorio de paquetes de R para análisis biológico - Versión 3.12 la más reciente</p>
+<p>## 4tipos de paquetes</p>
+<div id="software" class="section level3">
+<h3>Software</h3>
+</div>
+<div id="anotación" class="section level3">
+<h3>Anotación</h3>
+</div>
+<div id="experiment-data" class="section level3">
+<h3>Experiment Data</h3>
+<ul>
+<li>Cuando quieres compartir datos</li>
+<li>Datos exhaustivos</li>
+</ul>
+</div>
+<div id="workflows" class="section level2">
+<h2>Workflows</h2>
+<ul>
+<li>Describe como puedes usar varios paquetes de Bioconductor para análisis</li>
+</ul>
+</div>
+<div id="summarizedexperiment" class="section level2">
+<h2>SummarizedExperiment</h2>
+<p>objeto de R que nos ayuda a agrupar información necesaria en análisis de expresión diferencial</p>
+</div>
+<div id="para-encontrar-paquetes" class="section level2">
+<h2>Para encontrar paquetes</h2>
+<ul>
+<li>Checar la docuemtnación</li>
+<li>Que contesten a los usuarios</li>
+</ul>
+</div>
+<div id="dos-versiones-de-bioconductor-release-y-devel" class="section level2">
+<h2>Dos versiones de Bioconductor (Release y Devel)</h2>
+</div>
+<div id="actulaizaciones-de-r-y-bioconductor" class="section level2">
+<h2>Actulaizaciones de R y Bioconductor</h2>
+<p>En abril y octurbe se actualiza bioconductor y R se actualiza 1 vez al año</p>
+</div>
+<div id="paquetes-en-equipo" class="section level1">
+<h1>Paquetes en Equipo</h1>
+<p>BUENA {<a href="https://bioconductor.org/packages/3.12/bioc/html/VariantAnnotation.html" class="uri">https://bioconductor.org/packages/3.12/bioc/html/VariantAnnotation.html</a>} Este paquete es antiguo pero es una gran contribución a la comunidad, tanto que muchos otros paquetes son dependientes de este, volviéndolo una inclusión básica y necesaria para el desarrollo de investigaciones en R. Un gran punto sobre este proyecto es que contiene videos explicativos, como un tutorial para aprender las funciones básicas del paquete. Un punto a mejorar sería corregir los warnings en Windows y actualizarlo para versiones más actuales del mismo.</p>
+<p>MALA {<a href="https://bioconductor.org/packages/release/data/experiment/manuals/RRBSdata/man/RRBSdata.pdf" class="uri">https://bioconductor.org/packages/release/data/experiment/manuals/RRBSdata/man/RRBSdata.pdf</a>} La documentación es incompleta, carece de compatibilidad con plataformas que no sean ubuntu y no existe el github por lo tanto dificulta el contacto con los desarrolladores.</p>
+<p>BUENA {<a href="https://bioconductor.org/packages/release/bioc/html/DECIPHER.html" class="uri">https://bioconductor.org/packages/release/bioc/html/DECIPHER.html</a>} La documentación de este paquete es muy abundante y clara, explica cada uno de sus módulos y tiene una presentación impecable. Además, es un paquete muy versátil que permite su uso en diversas áreas de investigación. También debemos destacar que tiene importancia para otros paquetes, pues estos dependen o se basan en él.</p>
+<p>MALA {<a href="https://bioconductor.org/packages/release/bioc/html/sangeranalyseR.html" class="uri">https://bioconductor.org/packages/release/bioc/html/sangeranalyseR.html</a>} A pesar de ser un paquete reciente, el autor no lo ha actualizado desde la primera versión. Tiene compatibilidad nula con diversas distribuciones de software, pues muestra warnings en check. Por su alta dependencia a otros paquetes parecería que es una colección de los mismos.<br />
+La documentación mostrada es muy poca, y los comentarios en el código fuente son inexistentes.</p>
+<p>BUENA {<a href="http://bioconductor.org/packages/3.12/bioc/html/IsoformSwitchAnalyzeR.html" class="uri">http://bioconductor.org/packages/3.12/bioc/html/IsoformSwitchAnalyzeR.html</a>} Este paquete ha demostrado ser muy útil para varias herramientas de análisis, incluso contiene trabajos que lo citan en su página de bioconductor. Sí tiene GitHub para una comunicación con el desarrollador. Y se ha demostrado un uso constante del paquete, ya que contiene varios issues. También podemos encontrar que la mayoría de estos son sugerencias para eficientizar el código y no errores. Es un paquete accesible para citar y comunicarse con los desarrolladores.</p>
+<p>MALA {<a href="http://bioconductor.org/packages/release/bioc/html/riboSeqR.html" class="uri">http://bioconductor.org/packages/release/bioc/html/riboSeqR.html</a>} No tiene soporte a pesar de ser antiguo, se nota que no ha sido actualizado. No es un paquete muy robusto en funcionalidad ni documentación. Es probable que ya no se le dé soporte actual.</p>
+</div>
 
 
 
