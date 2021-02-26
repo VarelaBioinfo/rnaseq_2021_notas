@@ -78,13 +78,35 @@ iSEE::iSEE(rse_gene[index_snap])
 
 
 * Sugiere un modelo estadistico que podríamos usar en una análisis de expresión diferencial. Verifica que si sea un modelo _full rank_. ¿Cúal sería el o los coeficientes de interés?
+Si todas las columnas son linealmente independientes a las otras. Si no es full rank no se puede usar para el analisis de expresión diferencial 
+
+Utilizamos el modelo de expresión diferencial
 ```{r}
 # explormodelmatrix 
 
-<- model.matrix
+mod <- model.matrix(~ PrimaryDx + totalAssignedGene + mitoRate + numReads,
+    data = colData(rse_gene)
+)
+colnames(mod)
 
+ExploreModelMatrix::ExploreModelMatrix(rse_gene, mod)
 ```
 
+```{r}
+library("edgeR") # BiocManager::install("edgeR", update = FALSE)
+dge <- DGEList(
+    counts = assay(rse_gene, "counts"),
+    genes = rowData(rse_gene)
+)
+dge <- calcNormFactors(dge)
+```
+
+
+
+```{r}
+library("limma")
+vGene<- voom(dge,mod,plot=TRUE)
+```
 
 ¿Quieres más datos? Tenemos muchos en LIBD incluyendo http://eqtl.brainseq.org/phase2/.
 
