@@ -1,4 +1,7 @@
-# RNA-seq workflow: gene-level exploratory analysis and differential expression
+# Objetos 
+
+## RNA-seq workflow: gene-level exploratory analysis and differential expression
+
 
 ## Summarized Experiment (tipo de objeto)
 Construido con programación orientada a objetos 

@@ -1,4 +1,4 @@
-# Modelos estadísticos
+# Modelos 
 
 * Revisión de regresión lineal https://lcolladotor.github.io/bioc_team_ds/helping-others.html#linear-regression-example
 * Con R, usamos mucho la función `model.matrix()` y la sintáxis de fórmula `Y ~ X1 + X2` tal como en el siguiente ejemplo.
