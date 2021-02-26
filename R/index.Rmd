@@ -1,14 +1,20 @@
 ---
-title:"Intro RNA-seq LCG-UNAM 2021"
+title: "Intro RNA-seq LCG-UNAM 2021"
 author: "Leonardo Collado-Torres, Alfredo Varela Vega"
 email: avarela@lcg.unam.mx
 ---
 # Overview {-}
 
 Los temas generales que se abordan son:
+
 - Introducción a Github utilizando RStudio 
+
 - Introducción a bioconductor 
+
 - Objetos de Bioconductor para datos de expresión 
+
 - recount3
+
 - Modelos estadísticos 
+
 - Conclusión
