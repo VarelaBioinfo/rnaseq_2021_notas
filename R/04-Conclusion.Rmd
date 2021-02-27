@@ -35,10 +35,6 @@ colData(rse_gene)$names
 rse_gene$totalAssignedGene == rse_gene$mitoRate
 rse_gene$PrimaryDx
 
-
-
-rse_gene$comparacion <- rse_gene_$rassigment / rse_gene$mitoRate
-
 library("ggplot2")
 ggplot(as.data.frame(colData(rse_gene)), aes(y = mitoRate, x = PrimaryDx)) +
     geom_boxplot() +
@@ -89,7 +85,6 @@ mod <- model.matrix(~ PrimaryDx + totalAssignedGene + mitoRate + numReads,
 )
 colnames(mod)
 
-ExploreModelMatrix::ExploreModelMatrix(rse_gene, mod)
 ```
 
 ```{r}

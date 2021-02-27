@@ -31,6 +31,7 @@ Si alguno se le hace más fácil seguir el código en su Rstudio, pueden irse a 
 
 ```{r}
 library(SummarizedExperiment)
+
 ## ?SummarizedExperiment
 
 ## De los ejemplos en la ayuda oficial
@@ -92,7 +93,7 @@ colData(rse)
 seqlevels(rse)
 
 # el número de todos los cromosomas 
-length(seqlevels(sce))
+length(seqlevels(rse))
 
 # vector comprimido para hacerlo más eficiente 
 unique(as.vector(seqnames(rowRanges(rse))))
@@ -248,12 +249,16 @@ iSEE::iSEE(rse_gene_SRP009615)
 # Ejercicio 
 
 ```{r}
- Encuentra tu proyecto de interés. Aquí usaremos
+library("recount3")
+# Encuentra tu proyecto de interés. Aquí usaremos
 ## SRP009615 de ejemplo
+human_projects<-available_projects()
+
 proj_info <- subset(
     human_projects,
     project == "SRP009615" & project_type == "data_sources"
 )
+rse_gene_SRP009615<- create_rse(proj_info)
 
 ## ----"tranform_counts"-----------------------------------------------------------------------------
 ## Convirtamos las cuentas por nucleotido a cuentas por lectura
