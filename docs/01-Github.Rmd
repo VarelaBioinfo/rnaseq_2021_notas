@@ -3,7 +3,7 @@ library("sessioninfo")
 library("here")
 library("ggplot2")
 
-## Hello world
+## Hello world but with my name
 print("Soy Alfredo")
 
 # Crear directorio para las figuras
