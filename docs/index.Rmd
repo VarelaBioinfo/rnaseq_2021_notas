@@ -6,6 +6,17 @@ date: "`r Sys.Date()`"
 site: bookdwon::bookdown_site
 documentclass: book 
 description: "Book from first module of Bioinformática 2"
+output:
+  bookdown::gitbook:
+    lib_dir: assets
+    split_by: section
+    config:
+      toolbar:
+        position: static
+  bookdown::html_book:
+    css: toc.css
+documentclass: book
+
 
 ---
 # Overview {-}
