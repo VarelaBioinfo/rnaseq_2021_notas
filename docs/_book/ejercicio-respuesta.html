@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.8 Ejercicio: respuesta | Intro RNA-seq LCG-UNAM 2021</title>
+  <meta name="description" content="Book from first module of Bioinformática 2" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.8 Ejercicio: respuesta | Intro RNA-seq LCG-UNAM 2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Book from first module of Bioinformática 2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.8 Ejercicio: respuesta | Intro RNA-seq LCG-UNAM 2021" />
+  
+  <meta name="twitter:description" content="Book from first module of Bioinformática 2" />
+  
+
+<meta name="author" content="Leonardo Collado-Torres, Alfredo Varela Vega" />
+
+
+<meta name="date" content="2021-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comunidad.html"/>
+<link rel="next" href="específicaciones-del-proyecto.html"/>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>0.0.1</b> Software</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#anotación"><i class="fa fa-check"></i><b>0.0.2</b> Anotación</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#experiment-data"><i class="fa fa-check"></i><b>0.0.3</b> Experiment Data</a></li>
+<li class="chapter" data-level="0.1" data-path="workflows.html"><a href="workflows.html"><i class="fa fa-check"></i><b>0.1</b> Workflows</a></li>
+<li class="chapter" data-level="0.2" data-path="summarizedexperiment.html"><a href="summarizedexperiment.html"><i class="fa fa-check"></i><b>0.2</b> SummarizedExperiment</a></li>
+<li class="chapter" data-level="0.3" data-path="para-encontrar-paquetes.html"><a href="para-encontrar-paquetes.html"><i class="fa fa-check"></i><b>0.3</b> Para encontrar paquetes</a></li>
+<li class="chapter" data-level="0.4" data-path="dos-versiones-de-bioconductor-release-y-devel.html"><a href="dos-versiones-de-bioconductor-release-y-devel.html"><i class="fa fa-check"></i><b>0.4</b> Dos versiones de Bioconductor (Release y Devel)</a></li>
+<li class="chapter" data-level="0.5" data-path="actulaizaciones-de-r-y-bioconductor.html"><a href="actulaizaciones-de-r-y-bioconductor.html"><i class="fa fa-check"></i><b>0.5</b> Actulaizaciones de R y Bioconductor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="paquetes-en-equipo.html"><a href="paquetes-en-equipo.html"><i class="fa fa-check"></i><b>1</b> Paquetes en Equipo</a></li>
+<li class="chapter" data-level="2" data-path="objetos.html"><a href="objetos.html"><i class="fa fa-check"></i><b>2</b> Objetos</a><ul>
+<li class="chapter" data-level="2.1" data-path="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><a href="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><i class="fa fa-check"></i><b>2.1</b> RNA-seq workflow: gene-level exploratory analysis and differential expression</a></li>
+<li class="chapter" data-level="2.2" data-path="summarized-experiment-tipo-de-objeto.html"><a href="summarized-experiment-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.2</b> Summarized Experiment (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.3" data-path="genomic-ranges-tipo-de-objeto.html"><a href="genomic-ranges-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.3</b> Genomic Ranges (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.4" data-path="ejercicio.html"><a href="ejercicio.html"><i class="fa fa-check"></i><b>2.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ejercicio-2-realizar-el-heatmap.html"><a href="ejercicio-2-realizar-el-heatmap.html"><i class="fa fa-check"></i><b>3</b> Ejercicio 2 Realizar el heatmap</a></li>
+<li class="chapter" data-level="4" data-path="proyecto-recount.html"><a href="proyecto-recount.html"><i class="fa fa-check"></i><b>4</b> Proyecto Recount</a></li>
+<li class="chapter" data-level="5" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>5</b> Modelos</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html"><i class="fa fa-check"></i><b>5.1</b> ExploreModelMatrix</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-1"><i class="fa fa-check"></i><b>5.1.1</b> Ejemplo 1</a></li>
+<li class="chapter" data-level="5.1.2" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-2"><i class="fa fa-check"></i><b>5.1.2</b> Ejemplo 2</a></li>
+<li class="chapter" data-level="5.1.3" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejercicio-1"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="datos-de-srp045638.html"><a href="datos-de-srp045638.html"><i class="fa fa-check"></i><b>5.2</b> Datos de SRP045638</a></li>
+<li class="chapter" data-level="5.3" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>5.3</b> Normalización de datos</a></li>
+<li class="chapter" data-level="5.4" data-path="expresión-diferencial.html"><a href="expresión-diferencial.html"><i class="fa fa-check"></i><b>5.4</b> Expresión diferencial</a></li>
+<li class="chapter" data-level="5.5" data-path="visualizando-genes-de.html"><a href="visualizando-genes-de.html"><i class="fa fa-check"></i><b>5.5</b> Visualizando genes DE</a></li>
+<li class="chapter" data-level="5.6" data-path="ejercicio-2.html"><a href="ejercicio-2.html"><i class="fa fa-check"></i><b>5.6</b> Ejercicio</a></li>
+<li class="chapter" data-level="5.7" data-path="comunidad.html"><a href="comunidad.html"><i class="fa fa-check"></i><b>5.7</b> Comunidad</a></li>
+<li class="chapter" data-level="5.8" data-path="ejercicio-respuesta.html"><a href="ejercicio-respuesta.html"><i class="fa fa-check"></i><b>5.8</b> Ejercicio: respuesta</a></li>
+<li class="chapter" data-level="5.9" data-path="específicaciones-del-proyecto.html"><a href="específicaciones-del-proyecto.html"><i class="fa fa-check"></i><b>5.9</b> Específicaciones del proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="revisión.html"><a href="revisión.html"><i class="fa fa-check"></i><b>6</b> Revisión</a></li>
+<li class="chapter" data-level="7" data-path="spatiallibd.html"><a href="spatiallibd.html"><i class="fa fa-check"></i><b>7</b> spatialLIBD</a><ul>
+<li class="chapter" data-level="7.1" data-path="comunidad-1.html"><a href="comunidad-1.html"><i class="fa fa-check"></i><b>7.1</b> Comunidad</a></li>
+<li class="chapter" data-level="7.2" data-path="de-ustedes.html"><a href="de-ustedes.html"><i class="fa fa-check"></i><b>7.2</b> De ustedes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro RNA-seq LCG-UNAM 2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicio-respuesta" class="section level2">
+<h2><span class="header-section-number">5.8</span> Ejercicio: respuesta</h2>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ejercicio-respuesta.html#cb170-1"></a><span class="co">## Hagamos un heatmap</span></span>
+<span id="cb170-2"><a href="ejercicio-respuesta.html#cb170-2"></a><span class="kw">library</span>(<span class="st">&quot;pheatmap&quot;</span>)</span>
+<span id="cb170-3"><a href="ejercicio-respuesta.html#cb170-3"></a>nombres_rse_gene &lt;-<span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_name</span>
+<span id="cb170-4"><a href="ejercicio-respuesta.html#cb170-4"></a>id_rse_gene &lt;-<span class="st"> </span><span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_id</span>
+<span id="cb170-5"><a href="ejercicio-respuesta.html#cb170-5"></a></span>
+<span id="cb170-6"><a href="ejercicio-respuesta.html#cb170-6"></a>exprs_heatmap &lt;-<span class="st"> </span>vGene<span class="op">$</span>E[<span class="kw">rank</span>(de_results<span class="op">$</span>adj.P.Val) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">50</span>, ]</span>
+<span id="cb170-7"><a href="ejercicio-respuesta.html#cb170-7"></a>posiciones &lt;-<span class="st"> </span><span class="kw">match</span>(<span class="kw">rownames</span>(exprs_heatmap),id_rse_gene)</span>
+<span id="cb170-8"><a href="ejercicio-respuesta.html#cb170-8"></a><span class="co"># hacer un subconjunto de los ronames </span></span>
+<span id="cb170-9"><a href="ejercicio-respuesta.html#cb170-9"></a>filtered_id_names &lt;-<span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_name[posiciones]</span>
+<span id="cb170-10"><a href="ejercicio-respuesta.html#cb170-10"></a></span>
+<span id="cb170-11"><a href="ejercicio-respuesta.html#cb170-11"></a><span class="co"># remplazar los nombres de exprs_heatmap</span></span>
+<span id="cb170-12"><a href="ejercicio-respuesta.html#cb170-12"></a><span class="kw">head</span>(exprs_heatmap)</span></code></pre></div>
+<pre><code>##                    SRR2071341 SRR2071345 SRR2071346 SRR2071347 SRR2071348 SRR2071349 SRR2071350 SRR2071351 SRR2071352
+## ENSG00000004487.15   5.692763   5.606393   5.430083  5.1569628   7.518297   7.445085   5.781973   5.448240   7.176618
+## ENSG00000204178.9    4.811124   4.885577   4.990490  4.0719548   6.602715   6.447543   4.980434   4.816663   6.493733
+## ENSG00000162419.12   3.293328   3.148314   3.171269  2.9890020   5.619231   5.374634   3.465953   3.094800   5.318709
+## ENSG00000162415.6    3.160520   3.428597   3.237173  3.4659920   5.835181   5.810944   3.306355   3.105620   5.483980
+## ENSG00000085552.16  -2.428045  -1.525600  -1.740955 -0.6997084   5.823926   5.898864  -1.623354  -1.685655   5.064748
+## ENSG00000135829.16   6.919710   6.328120   6.620339  6.4279466   8.093594   8.091850   6.715528   6.727098   7.908553
+##                    SRR2071353 SRR2071354 SRR2071355 SRR2071356 SRR2071357 SRR2071358 SRR2071367 SRR2071368 SRR2071369
+## ENSG00000004487.15   5.556751   5.342522  5.6108146 5.40123972  5.6778968   5.595721  5.4210528   5.578470   5.741296
+## ENSG00000204178.9    4.809241   4.838252  4.9181433 4.97373564  4.9854609   4.864088  5.0068452   4.817734   4.934059
+## ENSG00000162419.12   3.279245   3.006375  3.7911593 3.64776299  3.5580599   3.256775  3.4922043   2.914296   3.416849
+## ENSG00000162415.6    3.147572   3.447960  3.6808560 3.07208609  3.5643530   3.094852  3.5083692   3.260165   3.342475
+## ENSG00000085552.16  -2.239830  -1.171817  0.4056524 0.08769592  0.7091167  -2.021886 -0.7830737  -3.472285  -2.212114
+## ENSG00000135829.16   6.404542   6.467804  6.5989476 6.41451229  6.6082238   6.720704  6.7896782   6.507378   6.759352
+##                    SRR2071370 SRR2071371 SRR2071376 SRR2071377 SRR2071378 SRR2071379 SRR1554533 SRR1554534 SRR1554536
+## ENSG00000004487.15   5.689600   5.745631   5.635053   7.952253   7.475059   7.979059   5.541552   5.635896   5.106621
+## ENSG00000204178.9    4.831015   5.006773   4.664567   6.490166   6.626266   6.593687   4.510478   4.910449   4.104646
+## ENSG00000162419.12   3.378930   3.133881   3.413172   5.413163   5.449081   5.542702   3.054074   3.230655   2.792566
+## ENSG00000162415.6    3.181437   3.326062   3.481478   5.588441   5.535767   5.914072   2.985952   3.441184   3.419442
+## ENSG00000085552.16  -2.643438  -2.659916  -1.222757   6.764201   5.767626   6.716638  -2.673846  -1.401001  -0.947675
+## ENSG00000135829.16   6.599360   6.820730   6.396282   8.357235   7.931288   8.160919   6.660800   6.373786   6.471711
+##                    SRR1554537 SRR1554539 SRR1554540 SRR1554541 SRR1554542 SRR1554543 SRR1554544 SRR1554546 SRR1554547
+## ENSG00000004487.15   7.462966   5.740171   5.459667   7.137450   5.577088   5.329421  5.6039939  5.6851706   5.582526
+## ENSG00000204178.9    6.514863   4.958525   4.822441   6.465591   4.821585   4.823587  4.8976781  4.9920093   4.803827
+## ENSG00000162419.12   5.561404   3.455911   3.086810   5.278213   3.255795   2.980218  3.7941796  3.5776137   3.211074
+## ENSG00000162415.6    5.757972   3.292025   3.131839   5.453689   3.167439   3.450818  3.6835242  3.6047392   3.142075
+## ENSG00000085552.16   5.747149  -1.692868  -1.833483   4.980003  -2.324414  -1.136216  0.3565132  0.6784039  -1.874925
+## ENSG00000135829.16   8.070399   6.713489   6.761215   7.908621   6.436612   6.473664  6.6091229  6.6381494   6.709908
+##                    SRR1554549 SRR1554550 SRR1554551 SRR1554552 SRR1554553 SRR1554555 SRR1554556 SRR1554557 SRR1554558
+## ENSG00000004487.15   5.793989   5.634839 5.62571457   5.758315   5.895725   5.311188   5.411240   5.507535   5.758238
+## ENSG00000204178.9    4.884880   4.927770 5.04839907   4.954594   5.311906   5.210338   5.013127   4.842563   4.954765
+## ENSG00000162419.12   3.581416   3.341922 3.47329697   3.774569   3.578363   2.381938   3.491525   2.702105   3.439599
+## ENSG00000162415.6    3.793732   3.154775 3.66939265   3.587606   3.700661   2.855540   3.514585   3.220487   3.374265
+## ENSG00000085552.16   0.350660  -3.571633 0.01017559  -1.113842   0.681692  -3.484311  -1.106573  -3.167138  -2.232827
+## ENSG00000135829.16   6.632186   6.579948 6.55151766   6.602276   6.637803   6.788319   6.819976   6.398397   6.819741
+##                    SRR1554559 SRR1554560 SRR1554561 SRR1554562 SRR1554563 SRR1554564 SRR1554565 SRR1554566 SRR1554568
+## ENSG00000004487.15   5.626921   5.597127   5.776923   5.458405   5.170338   5.611172   5.649376   7.971356   7.884582
+## ENSG00000204178.9    4.791485   5.006111   4.924816   4.748116   4.973657   4.849618   4.682468   6.517027   6.523926
+## ENSG00000162419.12   3.363460   3.122409   3.228505   3.329402   3.364144   3.511226   3.412549   5.423178   5.437399
+## ENSG00000162415.6    3.113869   3.190260   3.379007   2.747381   3.001906   3.461040   3.490597   5.621171   5.776315
+## ENSG00000085552.16  -2.397580  -2.073217  -1.121563  -1.944271  -1.082576  -1.308513  -1.349330   6.722448   6.507928
+## ENSG00000135829.16   6.552808   6.699049   6.376832   6.533807   6.421737   6.593186   6.434286   8.399187   8.099988
+##                    SRR2071359 SRR2071360 SRR2071361 SRR2071362 SRR2071363 SRR2071364 SRR2071365 SRR2071372 SRR2071373
+## ENSG00000004487.15   5.467089  5.7774767   5.612471  5.6127030   5.765383  5.9287563   5.749363   5.764838   5.449514
+## ENSG00000204178.9    4.839733  4.8690042   4.912722  5.0396130   4.945136  5.2379472   5.086634   4.882813   4.728208
+## ENSG00000162419.12   3.198120  3.5694797   3.321766  3.4993089   3.775119  3.6102983   3.236050   3.202146   3.350502
+## ENSG00000162415.6    3.254771  3.7662727   3.123410  3.6440209   3.590357  3.5663103   3.623968   3.348796   2.738244
+## ENSG00000085552.16  -2.254970  0.3482328  -3.638879  0.1027569  -1.112902  0.9033453  -1.264866  -1.098176  -1.817679
+## ENSG00000135829.16   6.567280  6.6005127   6.545583  6.5050058   6.579403  6.5488977   6.616591   6.340054   6.493427
+##                    SRR2071374 SRR2071375
+## ENSG00000004487.15   5.149179   5.599198
+## ENSG00000204178.9    4.940981   4.844950
+## ENSG00000162419.12   3.325939   3.523342
+## ENSG00000162415.6    2.959642   3.451274
+## ENSG00000085552.16  -1.027819  -1.250846
+## ENSG00000135829.16   6.410397   6.550054</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ejercicio-respuesta.html#cb172-1"></a>exprs_heatmap</span></code></pre></div>
+<pre><code>##                    SRR2071341  SRR2071345 SRR2071346 SRR2071347 SRR2071348 SRR2071349  SRR2071350  SRR2071351
+## ENSG00000004487.15  5.6927635  5.60639250  5.4300829  5.1569628  7.5182971   7.445085  5.78197294  5.44824036
+## ENSG00000204178.9   4.8111242  4.88557665  4.9904899  4.0719548  6.6027149   6.447543  4.98043404  4.81666268
+## ENSG00000162419.12  3.2933280  3.14831362  3.1712692  2.9890020  5.6192313   5.374634  3.46595299  3.09480017
+## ENSG00000162415.6   3.1605201  3.42859651  3.2371730  3.4659920  5.8351810   5.810944  3.30635513  3.10562043
+## ENSG00000085552.16 -2.4280446 -1.52559980 -1.7409548 -0.6997084  5.8239255   5.898864 -1.62335355 -1.68565475
+## ENSG00000135829.16  6.9197096  6.32812014  6.6203392  6.4279466  8.0935936   8.091850  6.71552814  6.72709758
+## ENSG00000117139.16  5.1828326  5.19297814  5.0553853  4.9334780  7.7999035   7.809068  5.50995622  5.16587892
+## ENSG00000186007.9  -1.3994755 -1.01863981 -0.8234170 -1.2471962  2.5143737   2.438267 -0.93746214 -1.78874824
+## ENSG00000143494.15  0.6075793  0.49325923  1.4757012  0.4786288  6.5360710   6.604665  0.88650750  0.48978726
+## ENSG00000234149.1  -1.0946209 -1.86663672 -1.9722804 -1.7777110  1.4363711   1.250600 -0.93746214 -1.25823352
+## ENSG00000156650.12  5.5878721  5.24814673  4.9403487  5.4132111  7.7639054   7.459461  5.32628288  5.16329190
+## ENSG00000110660.14  1.8137956  1.55738956  2.1077840  1.8205484  4.7959087   4.847012  1.69228828  1.32055040
+## ENSG00000154146.12  9.6725520 11.36245245 10.7615363  9.3005140  3.5591072   1.060040 10.66381929 10.02091570
+## ENSG00000205978.5   2.8573576  3.86852438  3.5055659  4.2883782  6.9708034   7.131151  3.22159096  3.27494643
+## ENSG00000066629.16  5.1207002  4.40513754  4.3042487  3.3877544  7.6680601   7.318142  5.12279562  5.19572296
+##                    SRR2071352 SRR2071353   SRR2071354 SRR2071355  SRR2071356 SRR2071357  SRR2071358 SRR2071367
+## ENSG00000004487.15   7.176618  5.5567507  5.342522497  5.6108146  5.40123972  5.6778968  5.59572081  5.4210528
+## ENSG00000204178.9    6.493733  4.8092409  4.838252396  4.9181433  4.97373564  4.9854609  4.86408784  5.0068452
+## ENSG00000162419.12   5.318709  3.2792448  3.006375155  3.7911593  3.64776299  3.5580599  3.25677485  3.4922043
+## ENSG00000162415.6    5.483980  3.1475722  3.447959809  3.6808560  3.07208609  3.5643530  3.09485197  3.5083692
+## ENSG00000085552.16   5.064748 -2.2398298 -1.171817462  0.4056524  0.08769592  0.7091167 -2.02188579 -0.7830737
+## ENSG00000135829.16   7.908553  6.4045416  6.467803929  6.5989476  6.41451229  6.6082238  6.72070435  6.7896782
+## ENSG00000117139.16   7.553997  5.1256595  5.196011483  5.3557516  5.78095208  5.4723944  5.34125342  5.1799800
+## ENSG00000186007.9    1.969966 -1.5877531 -2.329358739 -2.4017025 -2.50685263 -2.5791283 -0.95775546 -1.2790312
+## ENSG00000143494.15   6.722586  0.5870213  0.840566262  2.2944626  1.80639323  2.3822101  0.68191294  0.3780811
+## ENSG00000234149.1    1.291423 -1.6779509 -1.506236501 -1.1479459 -1.04218436 -1.5246805 -1.45157007 -1.5200393
+## ENSG00000156650.12   7.435749  5.0416036  5.407433444  5.5839205  5.39159761  5.7002144  5.38981777  5.1850171
+## ENSG00000110660.14   5.254463  1.9185996  2.383829472  2.4174940  2.75166630  2.9371779  1.82550379  1.6104923
+## ENSG00000154146.12   3.246470 10.3798771 10.481537261 10.1817239  8.61185490  9.5372907 10.27413527 10.0979986
+## ENSG00000205978.5    6.730769  3.1768170  3.338708004  4.2096061  3.51195956  4.1931228  2.98220696  3.3379417
+## ENSG00000066629.16   7.472138  4.8662034  4.469050749  4.3376887  3.99967315  4.3633862  5.08124303  4.8067987
+##                    SRR2071368 SRR2071369 SRR2071370 SRR2071371 SRR2071376 SRR2071377 SRR2071378 SRR2071379 SRR1554533
+## ENSG00000004487.15  5.5784704  5.7412962  5.6895997  5.7456311  5.6350531  7.9522525  7.4750586  7.9790595  5.5415522
+## ENSG00000204178.9   4.8177337  4.9340592  4.8310152  5.0067733  4.6645675  6.4901663  6.6262658  6.5936869  4.5104784
+## ENSG00000162419.12  2.9142959  3.4168489  3.3789298  3.1338812  3.4131718  5.4131627  5.4490809  5.5427024  3.0540744
+## ENSG00000162415.6   3.2601649  3.3424751  3.1814371  3.3260618  3.4814778  5.5884407  5.5357675  5.9140716  2.9859517
+## ENSG00000085552.16 -3.4722852 -2.2121138 -2.6434380 -2.6599156 -1.2227575  6.7642014  5.7676257  6.7166383 -2.6738460
+## ENSG00000135829.16  6.5073782  6.7593521  6.5993601  6.8207303  6.3962816  8.3572347  7.9312885  8.1609193  6.6607997
+## ENSG00000117139.16  5.1965998  5.5159906  5.3238641  5.5324946  5.2142677  7.6354156  7.5060939  7.9787155  4.4702457
+## ENSG00000186007.9  -1.1503571 -1.3130427 -1.3367766 -1.6259683 -1.7401567  3.2506122  2.8277884  3.2294364 -1.1999148
+## ENSG00000143494.15  1.0679074  0.4426190  1.0334470  1.4752439  0.2240426  6.0126527  6.6787295  6.6831084  0.3460535
+## ENSG00000234149.1  -1.4484384 -1.1547806 -1.1634450 -0.7854465 -1.3040576  1.8615699  0.9777962  1.5717308 -1.5958435
+## ENSG00000156650.12  5.3817520  5.1584558  5.4637103  5.6449517  5.0269891  7.4364788  7.3219500  7.9227110  4.8453534
+## ENSG00000110660.14  2.0066866  1.5756123  2.1058140  2.2400886  2.2294696  4.5501335  5.0634459  5.4108815  1.8635881
+## ENSG00000154146.12 10.3364444 10.6207709  9.5924346  9.2576873 11.6910003  1.0484787  2.2506377  0.7564473 10.5828050
+## ENSG00000205978.5   3.6754285  3.1680840  3.4384309  3.0936991  3.4784421  7.2009756  6.7039720  7.1661404  3.0173159
+## ENSG00000066629.16  4.5460077  5.1757871  4.5838613  4.8038033  5.2754496  7.4070817  7.0636727  7.8160365  4.9946451
+##                     SRR1554534 SRR1554536 SRR1554537  SRR1554539  SRR1554540 SRR1554541 SRR1554542  SRR1554543
+## ENSG00000004487.15  5.63589572  5.1066210  7.4629660  5.74017060  5.45966653   7.137450  5.5770880  5.32942122
+## ENSG00000204178.9   4.91044871  4.1046460  6.5148633  4.95852512  4.82244100   6.465591  4.8215851  4.82358658
+## ENSG00000162419.12  3.23065487  2.7925657  5.5614037  3.45591087  3.08681009   5.278213  3.2557949  2.98021804
+## ENSG00000162415.6   3.44118404  3.4194419  5.7579718  3.29202479  3.13183934   5.453689  3.1674390  3.45081830
+## ENSG00000085552.16 -1.40100087 -0.9476750  5.7471492 -1.69286832 -1.83348321   4.980003 -2.3244141 -1.13621555
+## ENSG00000135829.16  6.37378619  6.4717107  8.0703992  6.71348856  6.76121462   7.908621  6.4366122  6.47366370
+## ENSG00000117139.16  5.23753031  4.9170739  7.7634112  5.50773841  5.18932844   7.540866  5.1500390  5.20608906
+## ENSG00000186007.9  -1.12536643 -2.0851785  2.2919622 -1.13098943 -1.83348321   1.882354 -1.5279475 -2.29375683
+## ENSG00000143494.15  0.50081874  0.6372875  6.4686345  0.83367749  0.44152384   6.698254  0.5672097  0.85129351
+## ENSG00000234149.1  -1.74203779 -1.5997517  1.3453544 -0.95590273 -1.26788603   1.273751 -1.7143606 -1.47063459
+## ENSG00000156650.12  5.26620407  5.4178521  7.7098905  5.28604639  5.17595355   7.399726  5.0629230  5.39758406
+## ENSG00000110660.14  1.51094296  1.9327434  4.7254971  1.68960132  1.28421183   5.152897  1.9314841  2.36774723
+## ENSG00000154146.12 11.34415374  9.2282714  3.5113914 10.57549266  9.99056859   3.119644 10.3583842 10.44487137
+## ENSG00000205978.5   3.89989353  4.3174072  6.8937697  3.14603544  3.27587735   6.665568  3.1708098  3.30271966
+## ENSG00000066629.16  4.43188915  3.4446424  7.6133074  5.10402109  5.21047366   7.447585  4.8865776  4.47238979
+##                    SRR1554544 SRR1554546  SRR1554547 SRR1554549 SRR1554550  SRR1554551 SRR1554552 SRR1554553 SRR1554555
+## ENSG00000004487.15  5.6039939  5.6851706  5.58252649  5.7939891  5.6348392  5.62571457  5.7583151  5.8957254  5.3111881
+## ENSG00000204178.9   4.8976781  4.9920093  4.80382674  4.8848800  4.9277705  5.04839907  4.9545943  5.3119056  5.2103376
+## ENSG00000162419.12  3.7941796  3.5776137  3.21107376  3.5814159  3.3419218  3.47329697  3.7745692  3.5783628  2.3819381
+## ENSG00000162415.6   3.6835242  3.6047392  3.14207520  3.7937321  3.1547749  3.66939265  3.5876062  3.7006613  2.8555395
+## ENSG00000085552.16  0.3565132  0.6784039 -1.87492516  0.3506600 -3.5716325  0.01017559 -1.1138420  0.6816920 -3.4843105
+## ENSG00000135829.16  6.6091229  6.6381494  6.70990779  6.6321858  6.5799478  6.55151766  6.6022759  6.6378034  6.7883193
+## ENSG00000117139.16  5.3581035  5.4907658  5.26109364  5.4205833  5.1483266  5.37563551  5.5711297  5.6037779  4.5907229
+## ENSG00000186007.9  -2.3524381 -2.6823435 -0.85026310 -2.0167110 -0.5918104 -2.05210868 -1.6857484 -1.4797714 -2.7473449
+## ENSG00000143494.15  2.2914181  2.4242789  0.52448169  1.8272728  0.6071706  2.52931346  0.5886140  1.8647581  0.9080069
+## ENSG00000234149.1  -1.0986815 -1.4979189 -1.60362314 -0.9881419 -1.4561553 -1.09517741 -1.1672813 -0.9728114 -2.7473449
+## ENSG00000156650.12  5.5841999  5.7266617  5.19301911  5.4072032  5.0352867  5.70474194  5.3624807  5.4872273  4.9627727
+## ENSG00000110660.14  2.3775748  2.9588872  1.81012567  2.3700999  1.8546322  2.38790548  2.0325762  2.6342449  2.5960629
+## ENSG00000154146.12 10.1443581  9.5019402 10.50087266 10.1230833 10.6857799  9.88718964 10.9311171  9.9820042  9.2297203
+## ENSG00000205978.5   4.1986046  4.1812797  3.12662863  3.7709304  3.1364934  4.07353269  3.1090187  4.0388300  3.4660024
+## ENSG00000066629.16  4.3319060  4.3709654  5.09721287  4.4328504  5.1253350  4.25167206  5.2868822  4.9666590  4.3548933
+##                    SRR1554556 SRR1554557 SRR1554558 SRR1554559 SRR1554560 SRR1554561 SRR1554562 SRR1554563 SRR1554564
+## ENSG00000004487.15  5.4112402  5.5075355  5.7582381  5.6269208  5.5971272  5.7769234  5.4584050  5.1703380  5.6111724
+## ENSG00000204178.9   5.0131271  4.8425631  4.9547650  4.7914847  5.0061113  4.9248164  4.7481155  4.9736573  4.8496179
+## ENSG00000162419.12  3.4915247  2.7021050  3.4395988  3.3634601  3.1224089  3.2285051  3.3294024  3.3641442  3.5112257
+## ENSG00000162415.6   3.5145852  3.2204874  3.3742651  3.1138690  3.1902597  3.3790068  2.7473812  3.0019057  3.4610400
+## ENSG00000085552.16 -1.1065732 -3.1671383 -2.2328266 -2.3975796 -2.0732166 -1.1215635 -1.9442705 -1.0825763 -1.3085129
+## ENSG00000135829.16  6.8199759  6.3983966  6.8197415  6.5528081  6.6990494  6.3768325  6.5338072  6.4217374  6.5931863
+## ENSG00000117139.16  5.1963164  4.7780395  5.5474751  4.9887804  5.2692503  5.5095584  5.5747449  4.8761036  5.3808827
+## ENSG00000186007.9  -1.3348422 -0.8986495 -1.4591024 -0.8126171 -1.0313965 -0.7396929 -2.1047352 -1.3608775 -1.2122976
+## ENSG00000143494.15  0.3302906  1.0529102  0.3752196  0.9354037  1.5188006  0.8452696  0.4660134  1.1452296  1.1998283
+## ENSG00000234149.1  -1.4197311 -1.9827137 -0.9582042 -1.8500918 -0.8752773 -1.9180301 -1.9442705 -1.3608775 -1.6429319
+## ENSG00000156650.12  5.1900633  4.9513309  5.1784794  4.9054986  5.4020399  5.4269665  4.5899811  5.2063909  5.2644813
+## ENSG00000110660.14  1.5965707  2.1047491  1.5374910  2.2813591  2.4280352  1.5551416  2.0414216  1.9579778  2.2471340
+## ENSG00000154146.12  9.9890329 10.8809538 10.5998912 10.0435490  9.9202421 11.4212852 11.0342612  9.5932724 10.1920371
+## ENSG00000205978.5   3.3123078  3.8722793  3.1605985  3.5295146  3.3569899  3.9976921  2.7764687  3.0048865  3.8544860
+## ENSG00000066629.16  4.8102529  4.4442219  5.1942497  4.5610847  4.7913337  4.9195149  4.9556428  4.7749682  4.7441488
+##                    SRR1554565 SRR1554566 SRR1554568 SRR2071359 SRR2071360 SRR2071361 SRR2071362 SRR2071363 SRR2071364
+## ENSG00000004487.15  5.6493765  7.9713559  7.8845822  5.4670888  5.7774767  5.6124715  5.6127030  5.7653829  5.9287563
+## ENSG00000204178.9   4.6824677  6.5170273  6.5239255  4.8397330  4.8690042  4.9127220  5.0396130  4.9451357  5.2379472
+## ENSG00000162419.12  3.4125486  5.4231780  5.4373994  3.1981203  3.5694797  3.3217661  3.4993089  3.7751190  3.6102983
+## ENSG00000162415.6   3.4905970  5.6211712  5.7763146  3.2547705  3.7662727  3.1234103  3.6440209  3.5903565  3.5663103
+## ENSG00000085552.16 -1.3493295  6.7224479  6.5079279 -2.2549697  0.3482328 -3.6388794  0.1027569 -1.1129019  0.9033453
+## ENSG00000135829.16  6.4342860  8.3991870  8.0999882  6.5672796  6.6005127  6.5455827  6.5050058  6.5794033  6.5488977
+## ENSG00000117139.16  5.2393237  7.6681524  7.9234874  5.0399734  5.3906825  5.1148944  5.3275328  5.5496609  5.5449366
+## ENSG00000186007.9  -1.7882138  3.1547982  3.0571324 -1.8590411 -2.0847267 -0.6590573 -1.9891655 -1.5692801 -1.3096485
+## ENSG00000143494.15  0.2668276  6.0290704  6.6149205  0.4628870  1.7910534  0.6090481  2.4668105  0.6410797  1.6738634
+## ENSG00000234149.1  -1.3027869  1.9012638  1.4653888 -1.5487009 -1.0006624 -1.4512524 -1.1078100 -1.1129019 -1.3096485
+## ENSG00000156650.12  5.0511300  7.4564386  7.8283394  4.9957858  5.3861355  5.0085790  5.6746734  5.3589800  5.4633408
+## ENSG00000110660.14  2.2097811  4.5584180  5.2781954  1.5863325  2.3509019  1.8671526  2.3959021  2.0351222  2.4500884
+## ENSG00000154146.12 11.6370342  1.0170058  0.7216099 10.7556412 10.1598156 10.7068723  9.9115225 10.9823666 10.2178730
+## ENSG00000205978.5   3.4706401  7.1811818  7.0079968  3.3210007  3.7562401  3.1293049  4.0814497  3.1064308  4.0542872
+## ENSG00000066629.16  5.3013691  7.4354900  7.7328372  4.9477985  4.4179858  5.0999634  4.2192614  5.2843558  4.9296246
+##                    SRR2071365 SRR2071372 SRR2071373 SRR2071374 SRR2071375
+## ENSG00000004487.15  5.7493628  5.7648383  5.4495145  5.1491791  5.5991985
+## ENSG00000204178.9   5.0866337  4.8828127  4.7282085  4.9409810  4.8449503
+## ENSG00000162419.12  3.2360502  3.2021457  3.3505022  3.3259389  3.5233418
+## ENSG00000162415.6   3.6239682  3.3487956  2.7382435  2.9596421  3.4512740
+## ENSG00000085552.16 -1.2648659 -1.0981759 -1.8176793 -1.0278187 -1.2508462
+## ENSG00000135829.16  6.6165905  6.3400540  6.4934273  6.4103974  6.5500537
+## ENSG00000117139.16  5.6699252  5.4683924  5.5531976  4.8297796  5.3427429
+## ENSG00000186007.9  -1.7763663 -0.7530405 -1.9489239 -1.3777611 -1.2508462
+## ENSG00000143494.15  1.9334875  0.8113118  0.4269431  1.1445704  1.2204595
+## ENSG00000234149.1  -0.5107762 -1.9153119 -1.9489239 -1.4955976 -1.7716784
+## ENSG00000156650.12  5.9406538  5.4079038  4.5708996  5.1783316  5.2511718
+## ENSG00000110660.14  2.4812222  1.6052600  2.0639002  1.9356555  2.2631804
+## ENSG00000154146.12  9.7595398 11.4526423 11.0608798  9.6293898 10.2379829
+## ENSG00000205978.5   4.9512646  4.0266440  2.7646672  3.0118597  3.8481429
+## ENSG00000066629.16  4.9231877  4.8987746  4.9331369  4.7381240  4.7222640
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 35 rows ]</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ejercicio-respuesta.html#cb174-1"></a><span class="kw">row.names</span>(exprs_heatmap) &lt;-<span class="st"> </span>filtered_id_names</span>
+<span id="cb174-2"><a href="ejercicio-respuesta.html#cb174-2"></a></span>
+<span id="cb174-3"><a href="ejercicio-respuesta.html#cb174-3"></a><span class="co"># default value of pdf is 4</span></span>
+<span id="cb174-4"><a href="ejercicio-respuesta.html#cb174-4"></a><span class="kw">pdf</span>(<span class="st">&quot;pheatmap_con_nombres.pdf&quot;</span>, <span class="dt">height=</span><span class="dv">14</span>, <span class="dt">useDingbats =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb174-5"><a href="ejercicio-respuesta.html#cb174-5"></a><span class="co">## Y luego podemos cambiar el valor de show_rownames de FALSE a TRUE</span></span>
+<span id="cb174-6"><a href="ejercicio-respuesta.html#cb174-6"></a><span class="kw">pheatmap</span>(</span>
+<span id="cb174-7"><a href="ejercicio-respuesta.html#cb174-7"></a>    exprs_heatmap,</span>
+<span id="cb174-8"><a href="ejercicio-respuesta.html#cb174-8"></a>    <span class="co"># que agrupe los genes tanto en renglones como en cols que son las muestras</span></span>
+<span id="cb174-9"><a href="ejercicio-respuesta.html#cb174-9"></a>    <span class="dt">cluster_rows =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb174-10"><a href="ejercicio-respuesta.html#cb174-10"></a>    <span class="dt">cluster_cols =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb174-11"><a href="ejercicio-respuesta.html#cb174-11"></a>    <span class="dt">show_rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb174-12"><a href="ejercicio-respuesta.html#cb174-12"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb174-13"><a href="ejercicio-respuesta.html#cb174-13"></a>    <span class="dt">annotation_col =</span> df</span>
+<span id="cb174-14"><a href="ejercicio-respuesta.html#cb174-14"></a>)</span>
+<span id="cb174-15"><a href="ejercicio-respuesta.html#cb174-15"></a><span class="kw">dev.off</span>()</span></code></pre></div>
+<pre><code>## pdf 
+##   3</code></pre>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comunidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="específicaciones-del-proyecto.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

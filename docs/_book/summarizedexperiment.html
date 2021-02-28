@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Proyecto Recount | Intro RNA-seq LCG-UNAM 2021</title>
+  <title>0.2 SummarizedExperiment | Intro RNA-seq LCG-UNAM 2021</title>
   <meta name="description" content="Book from first module of Bioinformática 2" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Proyecto Recount | Intro RNA-seq LCG-UNAM 2021" />
+  <meta property="og:title" content="0.2 SummarizedExperiment | Intro RNA-seq LCG-UNAM 2021" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Proyecto Recount | Intro RNA-seq LCG-UNAM 2021" />
+  <meta name="twitter:title" content="0.2 SummarizedExperiment | Intro RNA-seq LCG-UNAM 2021" />
   
   <meta name="twitter:description" content="Book from first module of Bioinformática 2" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ejercicio-2-realizar-el-heatmap.html"/>
-<link rel="next" href="modelos.html"/>
+<link rel="prev" href="workflows.html"/>
+<link rel="next" href="para-encontrar-paquetes.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -186,108 +186,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="proyecto-recount" class="section level1">
-<h1><span class="header-section-number">4</span> Proyecto Recount</h1>
-<ul>
-<li>70 mil muestras de RNA-seq uniformemente procesaadas</li>
-<li>Democratización de los datos</li>
-<li>Cualquiera puede tener acceso a datos sin tener acceso a software</li>
-<li>recount workflow parquete de bioconductor</li>
-<li>Cuantificar niveles de expresión a lo largo de
-<ul>
-<li>genes</li>
-<li>exones</li>
-<li>regiones sin anotación</li>
-</ul></li>
-<li>Provienen de sequence read archive los datos crudos SRA</li>
-</ul>
-<p>Se rediseña recount 2 a recount 3 ahora son 700 mil muestras</p>
-<p>pkgdown permite hacer pagina web de paquetes de R
-140 mil dolares
-- 2 dolares por muestras en computo para procesar las muestras</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="proyecto-recount.html#cb62-1"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
-<span id="cb62-2"><a href="proyecto-recount.html#cb62-2"></a></span>
-<span id="cb62-3"><a href="proyecto-recount.html#cb62-3"></a><span class="co">## ----&#39;quick_example&#39;-------------------------------------------------------------------------------</span></span>
-<span id="cb62-4"><a href="proyecto-recount.html#cb62-4"></a><span class="co">## Revisemos todos los proyectos con datos de humano en recount3</span></span>
-<span id="cb62-5"><a href="proyecto-recount.html#cb62-5"></a>human_projects &lt;-<span class="st"> </span><span class="kw">available_projects</span>()</span>
-<span id="cb62-6"><a href="proyecto-recount.html#cb62-6"></a></span>
-<span id="cb62-7"><a href="proyecto-recount.html#cb62-7"></a><span class="co">## Encuentra tu proyecto de interés. Aquí usaremos</span></span>
-<span id="cb62-8"><a href="proyecto-recount.html#cb62-8"></a><span class="co">## SRP009615 de ejemplo</span></span>
-<span id="cb62-9"><a href="proyecto-recount.html#cb62-9"></a>proj_info &lt;-<span class="st"> </span><span class="kw">subset</span>(</span>
-<span id="cb62-10"><a href="proyecto-recount.html#cb62-10"></a>    human_projects,</span>
-<span id="cb62-11"><a href="proyecto-recount.html#cb62-11"></a>    project <span class="op">==</span><span class="st"> &quot;SRP009615&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
-<span id="cb62-12"><a href="proyecto-recount.html#cb62-12"></a>)</span>
-<span id="cb62-13"><a href="proyecto-recount.html#cb62-13"></a><span class="co">## Crea un objetio de tipo RangedSummarizedExperiment (RSE)</span></span>
-<span id="cb62-14"><a href="proyecto-recount.html#cb62-14"></a><span class="co">## con la información a nivel de genes</span></span>
-<span id="cb62-15"><a href="proyecto-recount.html#cb62-15"></a>rse_gene_SRP009615 &lt;-<span class="st"> </span><span class="kw">create_rse</span>(proj_info)</span>
-<span id="cb62-16"><a href="proyecto-recount.html#cb62-16"></a><span class="co">## Explora el objeto RSE</span></span>
-<span id="cb62-17"><a href="proyecto-recount.html#cb62-17"></a>rse_gene_SRP009615</span>
-<span id="cb62-18"><a href="proyecto-recount.html#cb62-18"></a><span class="co">## ----&quot;interactive_display&quot;, eval = FALSE-----------------------------------------------------------</span></span>
-<span id="cb62-19"><a href="proyecto-recount.html#cb62-19"></a><span class="co">## ## Explora los proyectos disponibles de forma interactiva</span></span>
-<span id="cb62-20"><a href="proyecto-recount.html#cb62-20"></a><span class="co">## proj_info_interactive &lt;- interactiveDisplayBase::display(human_projects)</span></span>
-<span id="cb62-21"><a href="proyecto-recount.html#cb62-21"></a><span class="co">## ## Selecciona un solo renglón en la tabla y da click en &quot;send&quot;.</span></span>
-<span id="cb62-22"><a href="proyecto-recount.html#cb62-22"></a><span class="co">## </span></span>
-<span id="cb62-23"><a href="proyecto-recount.html#cb62-23"></a><span class="co">## ## Aquí verificamos que solo seleccionaste un solo renglón.</span></span>
-<span id="cb62-24"><a href="proyecto-recount.html#cb62-24"></a><span class="co">## stopifnot(nrow(proj_info_interactive) == 1)</span></span>
-<span id="cb62-25"><a href="proyecto-recount.html#cb62-25"></a><span class="co">## ## Crea el objeto RSE</span></span>
-<span id="cb62-26"><a href="proyecto-recount.html#cb62-26"></a><span class="co">## rse_gene_interactive &lt;- create_rse(proj_info_interactive)</span></span>
-<span id="cb62-27"><a href="proyecto-recount.html#cb62-27"></a></span>
-<span id="cb62-28"><a href="proyecto-recount.html#cb62-28"></a></span>
-<span id="cb62-29"><a href="proyecto-recount.html#cb62-29"></a><span class="co">## ----&quot;tranform_counts&quot;-----------------------------------------------------------------------------</span></span>
-<span id="cb62-30"><a href="proyecto-recount.html#cb62-30"></a><span class="co">## Convirtamos las cuentas por nucleotido a cuentas por lectura</span></span>
-<span id="cb62-31"><a href="proyecto-recount.html#cb62-31"></a><span class="co">## usando compute_read_counts().</span></span>
-<span id="cb62-32"><a href="proyecto-recount.html#cb62-32"></a><span class="co">## Para otras transformaciones como RPKM y TPM, revisa transform_counts().</span></span>
-<span id="cb62-33"><a href="proyecto-recount.html#cb62-33"></a><span class="kw">assay</span>(rse_gene_SRP009615, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="kw">compute_read_counts</span>(rse_gene_SRP009615)</span>
-<span id="cb62-34"><a href="proyecto-recount.html#cb62-34"></a></span>
-<span id="cb62-35"><a href="proyecto-recount.html#cb62-35"></a></span>
-<span id="cb62-36"><a href="proyecto-recount.html#cb62-36"></a><span class="co">## ----&quot;expand_attributes&quot;---------------------------------------------------------------------------</span></span>
-<span id="cb62-37"><a href="proyecto-recount.html#cb62-37"></a><span class="co">## Para este estudio en específico, hagamos más fácil de usar la</span></span>
-<span id="cb62-38"><a href="proyecto-recount.html#cb62-38"></a><span class="co">## información del experimento</span></span>
-<span id="cb62-39"><a href="proyecto-recount.html#cb62-39"></a>rse_gene_SRP009615 &lt;-<span class="st"> </span><span class="kw">expand_sra_attributes</span>(rse_gene_SRP009615)</span>
-<span id="cb62-40"><a href="proyecto-recount.html#cb62-40"></a><span class="kw">colData</span>(rse_gene_SRP009615)[</span>
-<span id="cb62-41"><a href="proyecto-recount.html#cb62-41"></a>    ,</span>
-<span id="cb62-42"><a href="proyecto-recount.html#cb62-42"></a>    <span class="kw">grepl</span>(<span class="st">&quot;^sra_attribute&quot;</span>, <span class="kw">colnames</span>(<span class="kw">colData</span>(rse_gene_SRP009615)))</span>
-<span id="cb62-43"><a href="proyecto-recount.html#cb62-43"></a>]</span>
-<span id="cb62-44"><a href="proyecto-recount.html#cb62-44"></a></span>
-<span id="cb62-45"><a href="proyecto-recount.html#cb62-45"></a>iSEE<span class="op">::</span><span class="kw">iSEE</span>(rse_gene_SRP009615)</span></code></pre></div>
-<p># Ejercicio</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="proyecto-recount.html#cb63-1"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
-<span id="cb63-2"><a href="proyecto-recount.html#cb63-2"></a><span class="co"># Encuentra tu proyecto de interés. Aquí usaremos</span></span>
-<span id="cb63-3"><a href="proyecto-recount.html#cb63-3"></a><span class="co">## SRP009615 de ejemplo</span></span>
-<span id="cb63-4"><a href="proyecto-recount.html#cb63-4"></a>human_projects&lt;-<span class="kw">available_projects</span>()</span></code></pre></div>
-<pre><code>## 2021-02-28 13:09:06 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:07 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:08 caching file tcga.recount_project.MD.gz.</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="proyecto-recount.html#cb67-1"></a>proj_info &lt;-<span class="st"> </span><span class="kw">subset</span>(</span>
-<span id="cb67-2"><a href="proyecto-recount.html#cb67-2"></a>    human_projects,</span>
-<span id="cb67-3"><a href="proyecto-recount.html#cb67-3"></a>    project <span class="op">==</span><span class="st"> &quot;SRP009615&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
-<span id="cb67-4"><a href="proyecto-recount.html#cb67-4"></a>)</span>
-<span id="cb67-5"><a href="proyecto-recount.html#cb67-5"></a>rse_gene_SRP009615&lt;-<span class="st"> </span><span class="kw">create_rse</span>(proj_info)</span></code></pre></div>
-<pre><code>## 2021-02-28 13:09:14 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-28 13:09:16 caching file sra.sra.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:18 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:19 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:20 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:21 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:24 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-28 13:09:24 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:25 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-28 13:09:28 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:29 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="proyecto-recount.html#cb79-1"></a><span class="co">## ----&quot;tranform_counts&quot;-----------------------------------------------------------------------------</span></span>
-<span id="cb79-2"><a href="proyecto-recount.html#cb79-2"></a><span class="co">## Convirtamos las cuentas por nucleotido a cuentas por lectura</span></span>
-<span id="cb79-3"><a href="proyecto-recount.html#cb79-3"></a><span class="co">## usando compute_read_counts().</span></span>
-<span id="cb79-4"><a href="proyecto-recount.html#cb79-4"></a><span class="co">## Para otras transformaciones como RPKM y TPM, revisa transform_counts().</span></span>
-<span id="cb79-5"><a href="proyecto-recount.html#cb79-5"></a><span class="kw">assay</span>(rse_gene_SRP009615, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="st"> </span><span class="kw">compute_read_counts</span>(rse_gene_SRP009615)</span></code></pre></div>
-
+<div id="summarizedexperiment" class="section level2">
+<h2><span class="header-section-number">0.2</span> SummarizedExperiment</h2>
+<p>objeto de R que nos ayuda a agrupar información necesaria en análisis de expresión diferencial</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="ejercicio-2-realizar-el-heatmap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="modelos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="workflows.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="para-encontrar-paquetes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.3 Genomic Ranges (tipo de objeto) | Intro RNA-seq LCG-UNAM 2021</title>
+  <meta name="description" content="Book from first module of Bioinformática 2" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.3 Genomic Ranges (tipo de objeto) | Intro RNA-seq LCG-UNAM 2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Book from first module of Bioinformática 2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.3 Genomic Ranges (tipo de objeto) | Intro RNA-seq LCG-UNAM 2021" />
+  
+  <meta name="twitter:description" content="Book from first module of Bioinformática 2" />
+  
+
+<meta name="author" content="Leonardo Collado-Torres, Alfredo Varela Vega" />
+
+
+<meta name="date" content="2021-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="summarized-experiment-tipo-de-objeto.html"/>
+<link rel="next" href="ejercicio.html"/>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>0.0.1</b> Software</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#anotación"><i class="fa fa-check"></i><b>0.0.2</b> Anotación</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#experiment-data"><i class="fa fa-check"></i><b>0.0.3</b> Experiment Data</a></li>
+<li class="chapter" data-level="0.1" data-path="workflows.html"><a href="workflows.html"><i class="fa fa-check"></i><b>0.1</b> Workflows</a></li>
+<li class="chapter" data-level="0.2" data-path="summarizedexperiment.html"><a href="summarizedexperiment.html"><i class="fa fa-check"></i><b>0.2</b> SummarizedExperiment</a></li>
+<li class="chapter" data-level="0.3" data-path="para-encontrar-paquetes.html"><a href="para-encontrar-paquetes.html"><i class="fa fa-check"></i><b>0.3</b> Para encontrar paquetes</a></li>
+<li class="chapter" data-level="0.4" data-path="dos-versiones-de-bioconductor-release-y-devel.html"><a href="dos-versiones-de-bioconductor-release-y-devel.html"><i class="fa fa-check"></i><b>0.4</b> Dos versiones de Bioconductor (Release y Devel)</a></li>
+<li class="chapter" data-level="0.5" data-path="actulaizaciones-de-r-y-bioconductor.html"><a href="actulaizaciones-de-r-y-bioconductor.html"><i class="fa fa-check"></i><b>0.5</b> Actulaizaciones de R y Bioconductor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="paquetes-en-equipo.html"><a href="paquetes-en-equipo.html"><i class="fa fa-check"></i><b>1</b> Paquetes en Equipo</a></li>
+<li class="chapter" data-level="2" data-path="objetos.html"><a href="objetos.html"><i class="fa fa-check"></i><b>2</b> Objetos</a><ul>
+<li class="chapter" data-level="2.1" data-path="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><a href="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><i class="fa fa-check"></i><b>2.1</b> RNA-seq workflow: gene-level exploratory analysis and differential expression</a></li>
+<li class="chapter" data-level="2.2" data-path="summarized-experiment-tipo-de-objeto.html"><a href="summarized-experiment-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.2</b> Summarized Experiment (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.3" data-path="genomic-ranges-tipo-de-objeto.html"><a href="genomic-ranges-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.3</b> Genomic Ranges (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.4" data-path="ejercicio.html"><a href="ejercicio.html"><i class="fa fa-check"></i><b>2.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ejercicio-2-realizar-el-heatmap.html"><a href="ejercicio-2-realizar-el-heatmap.html"><i class="fa fa-check"></i><b>3</b> Ejercicio 2 Realizar el heatmap</a></li>
+<li class="chapter" data-level="4" data-path="proyecto-recount.html"><a href="proyecto-recount.html"><i class="fa fa-check"></i><b>4</b> Proyecto Recount</a></li>
+<li class="chapter" data-level="5" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>5</b> Modelos</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html"><i class="fa fa-check"></i><b>5.1</b> ExploreModelMatrix</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-1"><i class="fa fa-check"></i><b>5.1.1</b> Ejemplo 1</a></li>
+<li class="chapter" data-level="5.1.2" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-2"><i class="fa fa-check"></i><b>5.1.2</b> Ejemplo 2</a></li>
+<li class="chapter" data-level="5.1.3" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejercicio-1"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="datos-de-srp045638.html"><a href="datos-de-srp045638.html"><i class="fa fa-check"></i><b>5.2</b> Datos de SRP045638</a></li>
+<li class="chapter" data-level="5.3" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>5.3</b> Normalización de datos</a></li>
+<li class="chapter" data-level="5.4" data-path="expresión-diferencial.html"><a href="expresión-diferencial.html"><i class="fa fa-check"></i><b>5.4</b> Expresión diferencial</a></li>
+<li class="chapter" data-level="5.5" data-path="visualizando-genes-de.html"><a href="visualizando-genes-de.html"><i class="fa fa-check"></i><b>5.5</b> Visualizando genes DE</a></li>
+<li class="chapter" data-level="5.6" data-path="ejercicio-2.html"><a href="ejercicio-2.html"><i class="fa fa-check"></i><b>5.6</b> Ejercicio</a></li>
+<li class="chapter" data-level="5.7" data-path="comunidad.html"><a href="comunidad.html"><i class="fa fa-check"></i><b>5.7</b> Comunidad</a></li>
+<li class="chapter" data-level="5.8" data-path="ejercicio-respuesta.html"><a href="ejercicio-respuesta.html"><i class="fa fa-check"></i><b>5.8</b> Ejercicio: respuesta</a></li>
+<li class="chapter" data-level="5.9" data-path="específicaciones-del-proyecto.html"><a href="específicaciones-del-proyecto.html"><i class="fa fa-check"></i><b>5.9</b> Específicaciones del proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="revisión.html"><a href="revisión.html"><i class="fa fa-check"></i><b>6</b> Revisión</a></li>
+<li class="chapter" data-level="7" data-path="spatiallibd.html"><a href="spatiallibd.html"><i class="fa fa-check"></i><b>7</b> spatialLIBD</a><ul>
+<li class="chapter" data-level="7.1" data-path="comunidad-1.html"><a href="comunidad-1.html"><i class="fa fa-check"></i><b>7.1</b> Comunidad</a></li>
+<li class="chapter" data-level="7.2" data-path="de-ustedes.html"><a href="de-ustedes.html"><i class="fa fa-check"></i><b>7.2</b> De ustedes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro RNA-seq LCG-UNAM 2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="genomic-ranges-tipo-de-objeto" class="section level2">
+<h2><span class="header-section-number">2.3</span> Genomic Ranges (tipo de objeto)</h2>
+<p>Diseñada para almacenar de forma eficiente información sobre los genes
+- renglones el gen
+- columnas región del genoma, contenido de GC score
+- Lee formato BED
+- Lee formatos GTF</p>
+<p>Si alguno se le hace más fácil seguir el código en su Rstudio, pueden irse a la terminal (que está a lado de la consola ) y darle wget <a href="https://raw.githubusercontent.com/lcolladotor/rnaseq_LCG-UNAM_2021/master/03_SummarizedExperiment.Rmd" class="uri">https://raw.githubusercontent.com/lcolladotor/rnaseq_LCG-UNAM_2021/master/03_SummarizedExperiment.Rmd</a> para que les ponga ahí solo ese código y lo puedan cargar</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="genomic-ranges-tipo-de-objeto.html#cb7-1"></a><span class="kw">library</span>(SummarizedExperiment)</span>
+<span id="cb7-2"><a href="genomic-ranges-tipo-de-objeto.html#cb7-2"></a></span>
+<span id="cb7-3"><a href="genomic-ranges-tipo-de-objeto.html#cb7-3"></a><span class="co">## ?SummarizedExperiment</span></span>
+<span id="cb7-4"><a href="genomic-ranges-tipo-de-objeto.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="genomic-ranges-tipo-de-objeto.html#cb7-5"></a><span class="co">## De los ejemplos en la ayuda oficial</span></span>
+<span id="cb7-6"><a href="genomic-ranges-tipo-de-objeto.html#cb7-6"></a></span>
+<span id="cb7-7"><a href="genomic-ranges-tipo-de-objeto.html#cb7-7"></a><span class="co">## Creamos los datos para nuestro objeto de tipo SummarizedExperiment</span></span>
+<span id="cb7-8"><a href="genomic-ranges-tipo-de-objeto.html#cb7-8"></a><span class="co">## para 200 genes a lo largo de 6 muestras</span></span>
+<span id="cb7-9"><a href="genomic-ranges-tipo-de-objeto.html#cb7-9"></a>nrows &lt;-<span class="st"> </span><span class="dv">200</span></span>
+<span id="cb7-10"><a href="genomic-ranges-tipo-de-objeto.html#cb7-10"></a>ncols &lt;-<span class="st"> </span><span class="dv">6</span></span>
+<span id="cb7-11"><a href="genomic-ranges-tipo-de-objeto.html#cb7-11"></a><span class="co">## Números al azar de cuentas</span></span>
+<span id="cb7-12"><a href="genomic-ranges-tipo-de-objeto.html#cb7-12"></a><span class="kw">set.seed</span>(<span class="dv">20210223</span>)</span>
+<span id="cb7-13"><a href="genomic-ranges-tipo-de-objeto.html#cb7-13"></a>counts &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(nrows <span class="op">*</span><span class="st"> </span>ncols, <span class="dv">1</span>, <span class="fl">1e4</span>), nrows)</span>
+<span id="cb7-14"><a href="genomic-ranges-tipo-de-objeto.html#cb7-14"></a><span class="co">## Información de nuestros genes</span></span>
+<span id="cb7-15"><a href="genomic-ranges-tipo-de-objeto.html#cb7-15"></a>rowRanges &lt;-<span class="st"> </span><span class="kw">GRanges</span>(</span>
+<span id="cb7-16"><a href="genomic-ranges-tipo-de-objeto.html#cb7-16"></a>    <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;chr1&quot;</span>, <span class="st">&quot;chr2&quot;</span>), <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">150</span>)),</span>
+<span id="cb7-17"><a href="genomic-ranges-tipo-de-objeto.html#cb7-17"></a>    <span class="kw">IRanges</span>(<span class="kw">floor</span>(<span class="kw">runif</span>(<span class="dv">200</span>, <span class="fl">1e5</span>, <span class="fl">1e6</span>)), <span class="dt">width =</span> <span class="dv">100</span>),</span>
+<span id="cb7-18"><a href="genomic-ranges-tipo-de-objeto.html#cb7-18"></a>    <span class="dt">strand =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;+&quot;</span>, <span class="st">&quot;-&quot;</span>), <span class="dv">200</span>, <span class="ot">TRUE</span>),</span>
+<span id="cb7-19"><a href="genomic-ranges-tipo-de-objeto.html#cb7-19"></a>    <span class="dt">feature_id =</span> <span class="kw">sprintf</span>(<span class="st">&quot;ID%03d&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">200</span>)</span>
+<span id="cb7-20"><a href="genomic-ranges-tipo-de-objeto.html#cb7-20"></a>)</span>
+<span id="cb7-21"><a href="genomic-ranges-tipo-de-objeto.html#cb7-21"></a><span class="kw">names</span>(rowRanges) &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;gene_&quot;</span>, <span class="kw">seq_len</span>(<span class="kw">length</span>(rowRanges)))</span>
+<span id="cb7-22"><a href="genomic-ranges-tipo-de-objeto.html#cb7-22"></a><span class="co">## Información de nuestras muestras</span></span>
+<span id="cb7-23"><a href="genomic-ranges-tipo-de-objeto.html#cb7-23"></a>colData &lt;-<span class="st"> </span><span class="kw">DataFrame</span>(</span>
+<span id="cb7-24"><a href="genomic-ranges-tipo-de-objeto.html#cb7-24"></a>    <span class="dt">Treatment =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;ChIP&quot;</span>, <span class="st">&quot;Input&quot;</span>), <span class="dv">3</span>),</span>
+<span id="cb7-25"><a href="genomic-ranges-tipo-de-objeto.html#cb7-25"></a>    <span class="dt">row.names =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span>
+<span id="cb7-26"><a href="genomic-ranges-tipo-de-objeto.html#cb7-26"></a>)</span>
+<span id="cb7-27"><a href="genomic-ranges-tipo-de-objeto.html#cb7-27"></a><span class="co">## Juntamos ahora toda la información en un solo objeto de R</span></span>
+<span id="cb7-28"><a href="genomic-ranges-tipo-de-objeto.html#cb7-28"></a>rse &lt;-<span class="st"> </span><span class="kw">SummarizedExperiment</span>(</span>
+<span id="cb7-29"><a href="genomic-ranges-tipo-de-objeto.html#cb7-29"></a>    <span class="dt">assays =</span> <span class="kw">SimpleList</span>(<span class="dt">counts =</span> counts),</span>
+<span id="cb7-30"><a href="genomic-ranges-tipo-de-objeto.html#cb7-30"></a>    <span class="dt">rowRanges =</span> rowRanges,</span>
+<span id="cb7-31"><a href="genomic-ranges-tipo-de-objeto.html#cb7-31"></a>    <span class="dt">colData =</span> colData</span>
+<span id="cb7-32"><a href="genomic-ranges-tipo-de-objeto.html#cb7-32"></a>)</span>
+<span id="cb7-33"><a href="genomic-ranges-tipo-de-objeto.html#cb7-33"></a><span class="co">## Exploremos el objeto resultante</span></span>
+<span id="cb7-34"><a href="genomic-ranges-tipo-de-objeto.html#cb7-34"></a>rse</span></code></pre></div>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 200 6 
+## metadata(0):
+## assays(1): counts
+## rownames(200): gene_1 gene_2 ... gene_199 gene_200
+## rowData names(1): feature_id
+## colnames(6): A B ... E F
+## colData names(1): Treatment</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="genomic-ranges-tipo-de-objeto.html#cb9-1"></a><span class="co">## Número de genes y muestras</span></span>
+<span id="cb9-2"><a href="genomic-ranges-tipo-de-objeto.html#cb9-2"></a><span class="co"># 200 genes a lo largo de 6 muestras</span></span>
+<span id="cb9-3"><a href="genomic-ranges-tipo-de-objeto.html#cb9-3"></a><span class="kw">dim</span>(rse)</span></code></pre></div>
+<pre><code>## [1] 200   6</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="genomic-ranges-tipo-de-objeto.html#cb11-1"></a><span class="co">## IDs de nuestros genes y muestras</span></span>
+<span id="cb11-2"><a href="genomic-ranges-tipo-de-objeto.html#cb11-2"></a><span class="co"># gene_1, gene_2</span></span>
+<span id="cb11-3"><a href="genomic-ranges-tipo-de-objeto.html#cb11-3"></a><span class="kw">dimnames</span>(rse)</span></code></pre></div>
+<pre><code>## [[1]]
+##   [1] &quot;gene_1&quot;   &quot;gene_2&quot;   &quot;gene_3&quot;   &quot;gene_4&quot;   &quot;gene_5&quot;   &quot;gene_6&quot;   &quot;gene_7&quot;   &quot;gene_8&quot;   &quot;gene_9&quot;   &quot;gene_10&quot; 
+##  [11] &quot;gene_11&quot;  &quot;gene_12&quot;  &quot;gene_13&quot;  &quot;gene_14&quot;  &quot;gene_15&quot;  &quot;gene_16&quot;  &quot;gene_17&quot;  &quot;gene_18&quot;  &quot;gene_19&quot;  &quot;gene_20&quot; 
+##  [21] &quot;gene_21&quot;  &quot;gene_22&quot;  &quot;gene_23&quot;  &quot;gene_24&quot;  &quot;gene_25&quot;  &quot;gene_26&quot;  &quot;gene_27&quot;  &quot;gene_28&quot;  &quot;gene_29&quot;  &quot;gene_30&quot; 
+##  [31] &quot;gene_31&quot;  &quot;gene_32&quot;  &quot;gene_33&quot;  &quot;gene_34&quot;  &quot;gene_35&quot;  &quot;gene_36&quot;  &quot;gene_37&quot;  &quot;gene_38&quot;  &quot;gene_39&quot;  &quot;gene_40&quot; 
+##  [41] &quot;gene_41&quot;  &quot;gene_42&quot;  &quot;gene_43&quot;  &quot;gene_44&quot;  &quot;gene_45&quot;  &quot;gene_46&quot;  &quot;gene_47&quot;  &quot;gene_48&quot;  &quot;gene_49&quot;  &quot;gene_50&quot; 
+##  [51] &quot;gene_51&quot;  &quot;gene_52&quot;  &quot;gene_53&quot;  &quot;gene_54&quot;  &quot;gene_55&quot;  &quot;gene_56&quot;  &quot;gene_57&quot;  &quot;gene_58&quot;  &quot;gene_59&quot;  &quot;gene_60&quot; 
+##  [61] &quot;gene_61&quot;  &quot;gene_62&quot;  &quot;gene_63&quot;  &quot;gene_64&quot;  &quot;gene_65&quot;  &quot;gene_66&quot;  &quot;gene_67&quot;  &quot;gene_68&quot;  &quot;gene_69&quot;  &quot;gene_70&quot; 
+##  [71] &quot;gene_71&quot;  &quot;gene_72&quot;  &quot;gene_73&quot;  &quot;gene_74&quot;  &quot;gene_75&quot;  &quot;gene_76&quot;  &quot;gene_77&quot;  &quot;gene_78&quot;  &quot;gene_79&quot;  &quot;gene_80&quot; 
+##  [81] &quot;gene_81&quot;  &quot;gene_82&quot;  &quot;gene_83&quot;  &quot;gene_84&quot;  &quot;gene_85&quot;  &quot;gene_86&quot;  &quot;gene_87&quot;  &quot;gene_88&quot;  &quot;gene_89&quot;  &quot;gene_90&quot; 
+##  [91] &quot;gene_91&quot;  &quot;gene_92&quot;  &quot;gene_93&quot;  &quot;gene_94&quot;  &quot;gene_95&quot;  &quot;gene_96&quot;  &quot;gene_97&quot;  &quot;gene_98&quot;  &quot;gene_99&quot;  &quot;gene_100&quot;
+## [101] &quot;gene_101&quot; &quot;gene_102&quot; &quot;gene_103&quot; &quot;gene_104&quot; &quot;gene_105&quot; &quot;gene_106&quot; &quot;gene_107&quot; &quot;gene_108&quot; &quot;gene_109&quot; &quot;gene_110&quot;
+## [111] &quot;gene_111&quot; &quot;gene_112&quot; &quot;gene_113&quot; &quot;gene_114&quot; &quot;gene_115&quot; &quot;gene_116&quot; &quot;gene_117&quot; &quot;gene_118&quot; &quot;gene_119&quot; &quot;gene_120&quot;
+## [121] &quot;gene_121&quot; &quot;gene_122&quot; &quot;gene_123&quot; &quot;gene_124&quot; &quot;gene_125&quot; &quot;gene_126&quot; &quot;gene_127&quot; &quot;gene_128&quot; &quot;gene_129&quot; &quot;gene_130&quot;
+## [131] &quot;gene_131&quot; &quot;gene_132&quot; &quot;gene_133&quot; &quot;gene_134&quot; &quot;gene_135&quot; &quot;gene_136&quot; &quot;gene_137&quot; &quot;gene_138&quot; &quot;gene_139&quot; &quot;gene_140&quot;
+## [141] &quot;gene_141&quot; &quot;gene_142&quot; &quot;gene_143&quot; &quot;gene_144&quot; &quot;gene_145&quot; &quot;gene_146&quot; &quot;gene_147&quot; &quot;gene_148&quot; &quot;gene_149&quot; &quot;gene_150&quot;
+## [151] &quot;gene_151&quot; &quot;gene_152&quot; &quot;gene_153&quot; &quot;gene_154&quot; &quot;gene_155&quot; &quot;gene_156&quot; &quot;gene_157&quot; &quot;gene_158&quot; &quot;gene_159&quot; &quot;gene_160&quot;
+## [161] &quot;gene_161&quot; &quot;gene_162&quot; &quot;gene_163&quot; &quot;gene_164&quot; &quot;gene_165&quot; &quot;gene_166&quot; &quot;gene_167&quot; &quot;gene_168&quot; &quot;gene_169&quot; &quot;gene_170&quot;
+## [171] &quot;gene_171&quot; &quot;gene_172&quot; &quot;gene_173&quot; &quot;gene_174&quot; &quot;gene_175&quot; &quot;gene_176&quot; &quot;gene_177&quot; &quot;gene_178&quot; &quot;gene_179&quot; &quot;gene_180&quot;
+## [181] &quot;gene_181&quot; &quot;gene_182&quot; &quot;gene_183&quot; &quot;gene_184&quot; &quot;gene_185&quot; &quot;gene_186&quot; &quot;gene_187&quot; &quot;gene_188&quot; &quot;gene_189&quot; &quot;gene_190&quot;
+## [191] &quot;gene_191&quot; &quot;gene_192&quot; &quot;gene_193&quot; &quot;gene_194&quot; &quot;gene_195&quot; &quot;gene_196&quot; &quot;gene_197&quot; &quot;gene_198&quot; &quot;gene_199&quot; &quot;gene_200&quot;
+## 
+## [[2]]
+## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="genomic-ranges-tipo-de-objeto.html#cb13-1"></a><span class="co">## Nombres de tablas de cuentas que tenemos (RPKM, CPM, counts, logcounts, etc)</span></span>
+<span id="cb13-2"><a href="genomic-ranges-tipo-de-objeto.html#cb13-2"></a><span class="kw">assayNames</span>(rse)</span></code></pre></div>
+<pre><code>## [1] &quot;counts&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="genomic-ranges-tipo-de-objeto.html#cb15-1"></a><span class="co">## El inicio de nuestra tabla de cuentas</span></span>
+<span id="cb15-2"><a href="genomic-ranges-tipo-de-objeto.html#cb15-2"></a><span class="kw">head</span>(<span class="kw">assay</span>(rse))</span></code></pre></div>
+<pre><code>##               A        B         C         D         E        F
+## gene_1 2577.960 8526.615 2226.3070 3615.8967 1723.8851 3267.954
+## gene_2 7793.183 3462.579  478.2716 7688.3839  295.2813 2698.921
+## gene_3 9571.769 5280.564 9772.1671 9916.0076 2621.2085 6880.067
+## gene_4 4641.969 2784.091 6670.6757  258.5218 2771.8970 8737.586
+## gene_5 6436.758 7053.276 9978.8199 3588.1194 1447.9821 7290.890
+## gene_6 6845.704 1502.045 4383.5686 9750.8286 3529.3153 2192.060</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="genomic-ranges-tipo-de-objeto.html#cb17-1"></a><span class="co">## Información de los genes en un objeto de Bioconductor</span></span>
+<span id="cb17-2"><a href="genomic-ranges-tipo-de-objeto.html#cb17-2"></a><span class="kw">rowRanges</span>(rse)</span></code></pre></div>
+<pre><code>## GRanges object with 200 ranges and 1 metadata column:
+##            seqnames        ranges strand |  feature_id
+##               &lt;Rle&gt;     &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt;
+##     gene_1     chr1 286235-286334      + |       ID001
+##     gene_2     chr1 586770-586869      - |       ID002
+##     gene_3     chr1 577897-577996      + |       ID003
+##     gene_4     chr1 494350-494449      + |       ID004
+##     gene_5     chr1 686692-686791      - |       ID005
+##        ...      ...           ...    ... .         ...
+##   gene_196     chr2 804998-805097      - |       ID196
+##   gene_197     chr2 177462-177561      - |       ID197
+##   gene_198     chr2 649993-650092      - |       ID198
+##   gene_199     chr2 275940-276039      - |       ID199
+##   gene_200     chr2 487418-487517      + |       ID200
+##   -------
+##   seqinfo: 2 sequences from an unspecified genome; no seqlengths</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="genomic-ranges-tipo-de-objeto.html#cb19-1"></a><span class="co">## Tabla con información de los genes</span></span>
+<span id="cb19-2"><a href="genomic-ranges-tipo-de-objeto.html#cb19-2"></a><span class="kw">rowData</span>(rse) <span class="co"># es idéntico a &#39;mcols(rowRanges(rse))&#39;</span></span></code></pre></div>
+<pre><code>## DataFrame with 200 rows and 1 column
+##           feature_id
+##          &lt;character&gt;
+## gene_1         ID001
+## gene_2         ID002
+## gene_3         ID003
+## gene_4         ID004
+## gene_5         ID005
+## ...              ...
+## gene_196       ID196
+## gene_197       ID197
+## gene_198       ID198
+## gene_199       ID199
+## gene_200       ID200</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="genomic-ranges-tipo-de-objeto.html#cb21-1"></a><span class="co">## Tabla con información de las muestras</span></span>
+<span id="cb21-2"><a href="genomic-ranges-tipo-de-objeto.html#cb21-2"></a><span class="kw">colData</span>(rse)</span></code></pre></div>
+<pre><code>## DataFrame with 6 rows and 1 column
+##     Treatment
+##   &lt;character&gt;
+## A        ChIP
+## B       Input
+## C        ChIP
+## D       Input
+## E        ChIP
+## F       Input</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="genomic-ranges-tipo-de-objeto.html#cb23-1"></a><span class="co"># Es como hacer el unique de los seq names </span></span>
+<span id="cb23-2"><a href="genomic-ranges-tipo-de-objeto.html#cb23-2"></a><span class="co"># te da el nombre de todos los cromosomas </span></span>
+<span id="cb23-3"><a href="genomic-ranges-tipo-de-objeto.html#cb23-3"></a><span class="kw">seqlevels</span>(rse)</span></code></pre></div>
+<pre><code>## [1] &quot;chr1&quot; &quot;chr2&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="genomic-ranges-tipo-de-objeto.html#cb25-1"></a><span class="co"># el número de todos los cromosomas </span></span>
+<span id="cb25-2"><a href="genomic-ranges-tipo-de-objeto.html#cb25-2"></a><span class="kw">length</span>(<span class="kw">seqlevels</span>(rse))</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="genomic-ranges-tipo-de-objeto.html#cb27-1"></a><span class="co"># vector comprimido para hacerlo más eficiente </span></span>
+<span id="cb27-2"><a href="genomic-ranges-tipo-de-objeto.html#cb27-2"></a><span class="kw">unique</span>(<span class="kw">as.vector</span>(<span class="kw">seqnames</span>(<span class="kw">rowRanges</span>(rse))))</span></code></pre></div>
+<pre><code>## [1] &quot;chr1&quot; &quot;chr2&quot;</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="genomic-ranges-tipo-de-objeto.html#cb29-1"></a><span class="co">## ver el tamaño en gigas del objeto </span></span>
+<span id="cb29-2"><a href="genomic-ranges-tipo-de-objeto.html#cb29-2"></a><span class="co"># pryr::object_size(sce)</span></span></code></pre></div>
+<p>Counts son lecturas que sobrelapan ese gen</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="summarized-experiment-tipo-de-objeto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

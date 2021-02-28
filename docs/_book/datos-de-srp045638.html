@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.2 Datos de SRP045638 | Intro RNA-seq LCG-UNAM 2021</title>
+  <meta name="description" content="Book from first module of Bioinformática 2" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.2 Datos de SRP045638 | Intro RNA-seq LCG-UNAM 2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Book from first module of Bioinformática 2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.2 Datos de SRP045638 | Intro RNA-seq LCG-UNAM 2021" />
+  
+  <meta name="twitter:description" content="Book from first module of Bioinformática 2" />
+  
+
+<meta name="author" content="Leonardo Collado-Torres, Alfredo Varela Vega" />
+
+
+<meta name="date" content="2021-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exploremodelmatrix.html"/>
+<link rel="next" href="normalización-de-datos.html"/>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>0.0.1</b> Software</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#anotación"><i class="fa fa-check"></i><b>0.0.2</b> Anotación</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#experiment-data"><i class="fa fa-check"></i><b>0.0.3</b> Experiment Data</a></li>
+<li class="chapter" data-level="0.1" data-path="workflows.html"><a href="workflows.html"><i class="fa fa-check"></i><b>0.1</b> Workflows</a></li>
+<li class="chapter" data-level="0.2" data-path="summarizedexperiment.html"><a href="summarizedexperiment.html"><i class="fa fa-check"></i><b>0.2</b> SummarizedExperiment</a></li>
+<li class="chapter" data-level="0.3" data-path="para-encontrar-paquetes.html"><a href="para-encontrar-paquetes.html"><i class="fa fa-check"></i><b>0.3</b> Para encontrar paquetes</a></li>
+<li class="chapter" data-level="0.4" data-path="dos-versiones-de-bioconductor-release-y-devel.html"><a href="dos-versiones-de-bioconductor-release-y-devel.html"><i class="fa fa-check"></i><b>0.4</b> Dos versiones de Bioconductor (Release y Devel)</a></li>
+<li class="chapter" data-level="0.5" data-path="actulaizaciones-de-r-y-bioconductor.html"><a href="actulaizaciones-de-r-y-bioconductor.html"><i class="fa fa-check"></i><b>0.5</b> Actulaizaciones de R y Bioconductor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="paquetes-en-equipo.html"><a href="paquetes-en-equipo.html"><i class="fa fa-check"></i><b>1</b> Paquetes en Equipo</a></li>
+<li class="chapter" data-level="2" data-path="objetos.html"><a href="objetos.html"><i class="fa fa-check"></i><b>2</b> Objetos</a><ul>
+<li class="chapter" data-level="2.1" data-path="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><a href="rna-seq-workflow-gene-level-exploratory-analysis-and-differential-expression.html"><i class="fa fa-check"></i><b>2.1</b> RNA-seq workflow: gene-level exploratory analysis and differential expression</a></li>
+<li class="chapter" data-level="2.2" data-path="summarized-experiment-tipo-de-objeto.html"><a href="summarized-experiment-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.2</b> Summarized Experiment (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.3" data-path="genomic-ranges-tipo-de-objeto.html"><a href="genomic-ranges-tipo-de-objeto.html"><i class="fa fa-check"></i><b>2.3</b> Genomic Ranges (tipo de objeto)</a></li>
+<li class="chapter" data-level="2.4" data-path="ejercicio.html"><a href="ejercicio.html"><i class="fa fa-check"></i><b>2.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ejercicio-2-realizar-el-heatmap.html"><a href="ejercicio-2-realizar-el-heatmap.html"><i class="fa fa-check"></i><b>3</b> Ejercicio 2 Realizar el heatmap</a></li>
+<li class="chapter" data-level="4" data-path="proyecto-recount.html"><a href="proyecto-recount.html"><i class="fa fa-check"></i><b>4</b> Proyecto Recount</a></li>
+<li class="chapter" data-level="5" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>5</b> Modelos</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html"><i class="fa fa-check"></i><b>5.1</b> ExploreModelMatrix</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-1"><i class="fa fa-check"></i><b>5.1.1</b> Ejemplo 1</a></li>
+<li class="chapter" data-level="5.1.2" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejemplo-2"><i class="fa fa-check"></i><b>5.1.2</b> Ejemplo 2</a></li>
+<li class="chapter" data-level="5.1.3" data-path="exploremodelmatrix.html"><a href="exploremodelmatrix.html#ejercicio-1"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="datos-de-srp045638.html"><a href="datos-de-srp045638.html"><i class="fa fa-check"></i><b>5.2</b> Datos de SRP045638</a></li>
+<li class="chapter" data-level="5.3" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>5.3</b> Normalización de datos</a></li>
+<li class="chapter" data-level="5.4" data-path="expresión-diferencial.html"><a href="expresión-diferencial.html"><i class="fa fa-check"></i><b>5.4</b> Expresión diferencial</a></li>
+<li class="chapter" data-level="5.5" data-path="visualizando-genes-de.html"><a href="visualizando-genes-de.html"><i class="fa fa-check"></i><b>5.5</b> Visualizando genes DE</a></li>
+<li class="chapter" data-level="5.6" data-path="ejercicio-2.html"><a href="ejercicio-2.html"><i class="fa fa-check"></i><b>5.6</b> Ejercicio</a></li>
+<li class="chapter" data-level="5.7" data-path="comunidad.html"><a href="comunidad.html"><i class="fa fa-check"></i><b>5.7</b> Comunidad</a></li>
+<li class="chapter" data-level="5.8" data-path="ejercicio-respuesta.html"><a href="ejercicio-respuesta.html"><i class="fa fa-check"></i><b>5.8</b> Ejercicio: respuesta</a></li>
+<li class="chapter" data-level="5.9" data-path="específicaciones-del-proyecto.html"><a href="específicaciones-del-proyecto.html"><i class="fa fa-check"></i><b>5.9</b> Específicaciones del proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="revisión.html"><a href="revisión.html"><i class="fa fa-check"></i><b>6</b> Revisión</a></li>
+<li class="chapter" data-level="7" data-path="spatiallibd.html"><a href="spatiallibd.html"><i class="fa fa-check"></i><b>7</b> spatialLIBD</a><ul>
+<li class="chapter" data-level="7.1" data-path="comunidad-1.html"><a href="comunidad-1.html"><i class="fa fa-check"></i><b>7.1</b> Comunidad</a></li>
+<li class="chapter" data-level="7.2" data-path="de-ustedes.html"><a href="de-ustedes.html"><i class="fa fa-check"></i><b>7.2</b> De ustedes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro RNA-seq LCG-UNAM 2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos-de-srp045638" class="section level2">
+<h2><span class="header-section-number">5.2</span> Datos de SRP045638</h2>
+<p>Vamos a usar datos de <a href="https://www.ncbi.nlm.nih.gov/sra/?term=SRP045638" class="uri">https://www.ncbi.nlm.nih.gov/sra/?term=SRP045638</a> procesados con <code>recount3</code>. Primero hay que descargar los datos con los comandos que vimos ayer.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="datos-de-srp045638.html#cb90-1"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
+<span id="cb90-2"><a href="datos-de-srp045638.html#cb90-2"></a></span>
+<span id="cb90-3"><a href="datos-de-srp045638.html#cb90-3"></a>human_projects &lt;-<span class="st"> </span><span class="kw">available_projects</span>()</span></code></pre></div>
+<pre><code>## 2021-02-28 13:09:32 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:33 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:34 caching file tcga.recount_project.MD.gz.</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="datos-de-srp045638.html#cb94-1"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span><span class="kw">create_rse</span>(</span>
+<span id="cb94-2"><a href="datos-de-srp045638.html#cb94-2"></a>    <span class="kw">subset</span>(</span>
+<span id="cb94-3"><a href="datos-de-srp045638.html#cb94-3"></a>        human_projects,</span>
+<span id="cb94-4"><a href="datos-de-srp045638.html#cb94-4"></a>        project <span class="op">==</span><span class="st"> &quot;SRP045638&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
+<span id="cb94-5"><a href="datos-de-srp045638.html#cb94-5"></a>    )</span>
+<span id="cb94-6"><a href="datos-de-srp045638.html#cb94-6"></a>)</span></code></pre></div>
+<pre><code>## 2021-02-28 13:09:39 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-28 13:09:42 caching file sra.sra.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:43 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:45 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:46 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:47 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:49 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-28 13:09:50 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:51 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-28 13:09:53 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
+<pre><code>## 2021-02-28 13:09:54 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="datos-de-srp045638.html#cb106-1"></a><span class="kw">assay</span>(rse_gene_SRP045638, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="st"> </span><span class="kw">compute_read_counts</span>(rse_gene_SRP045638)</span>
+<span id="cb106-2"><a href="datos-de-srp045638.html#cb106-2"></a>human_projects</span></code></pre></div>
+<pre><code>##       project organism file_source     project_home project_type n_samples
+## 1   SRP107565    human         sra data_sources/sra data_sources       216
+## 2   SRP149665    human         sra data_sources/sra data_sources         4
+## 3   SRP017465    human         sra data_sources/sra data_sources        23
+## 4   SRP119165    human         sra data_sources/sra data_sources         6
+## 5   SRP133965    human         sra data_sources/sra data_sources        12
+## 6   SRP096765    human         sra data_sources/sra data_sources         7
+## 7   SRP124965    human         sra data_sources/sra data_sources        12
+## 8   SRP189165    human         sra data_sources/sra data_sources        15
+## 9   SRP050365    human         sra data_sources/sra data_sources        10
+## 10  SRP123065    human         sra data_sources/sra data_sources        41
+## 11  SRP162465    human         sra data_sources/sra data_sources         8
+## 12  SRP178865    human         sra data_sources/sra data_sources        24
+## 13  SRP032165    human         sra data_sources/sra data_sources        24
+## 14  SRP125965    human         sra data_sources/sra data_sources        72
+## 15  SRP120165    human         sra data_sources/sra data_sources        18
+## 16  SRP044265    human         sra data_sources/sra data_sources         6
+## 17  SRP014565    human         sra data_sources/sra data_sources         1
+## 18  SRP057065    human         sra data_sources/sra data_sources        51
+## 19  SRP117665    human         sra data_sources/sra data_sources         9
+## 20  SRP049465    human         sra data_sources/sra data_sources         4
+## 21  SRP007665    human         sra data_sources/sra data_sources         1
+## 22  SRP124265    human         sra data_sources/sra data_sources         2
+## 23  SRP187765    human         sra data_sources/sra data_sources        14
+## 24  SRP157965    human         sra data_sources/sra data_sources        63
+## 25  SRP150065    human         sra data_sources/sra data_sources        18
+## 26  SRP201065    human         sra data_sources/sra data_sources         4
+## 27  SRP169065    human         sra data_sources/sra data_sources        12
+## 28  SRP119065    human         sra data_sources/sra data_sources         4
+## 29  SRP048565    human         sra data_sources/sra data_sources        18
+## 30  SRP092465    human         sra data_sources/sra data_sources         8
+## 31  SRP047065    human         sra data_sources/sra data_sources        13
+## 32  SRP105765    human         sra data_sources/sra data_sources         6
+## 33  SRP013565    human         sra data_sources/sra data_sources      2212
+## 34  SRP072665    human         sra data_sources/sra data_sources         9
+## 35  SRP132065    human         sra data_sources/sra data_sources         3
+## 36  SRP094565    human         sra data_sources/sra data_sources        24
+## 37  SRP187565    human         sra data_sources/sra data_sources        12
+## 38  SRP212065    human         sra data_sources/sra data_sources        11
+## 39  SRP126165    human         sra data_sources/sra data_sources        30
+## 40  SRP078365    human         sra data_sources/sra data_sources         8
+## 41  SRP075565    human         sra data_sources/sra data_sources         9
+## 42  SRP099865    human         sra data_sources/sra data_sources        12
+## 43  SRP077565    human         sra data_sources/sra data_sources        22
+## 44  SRP115565    human         sra data_sources/sra data_sources        32
+## 45  ERP010065    human         sra data_sources/sra data_sources         8
+## 46  SRP071665    human         sra data_sources/sra data_sources         4
+## 47  SRP201365    human         sra data_sources/sra data_sources        79
+## 48  SRP033365    human         sra data_sources/sra data_sources         1
+## 49  SRP110765    human         sra data_sources/sra data_sources        16
+## 50  SRP045065    human         sra data_sources/sra data_sources         8
+## 51  SRP098865    human         sra data_sources/sra data_sources        12
+## 52  SRP182665    human         sra data_sources/sra data_sources        16
+## 53  SRP152865    human         sra data_sources/sra data_sources         8
+## 54  SRP108065    human         sra data_sources/sra data_sources        14
+## 55  SRP125165    human         sra data_sources/sra data_sources        13
+## 56  SRP056665    human         sra data_sources/sra data_sources        12
+## 57  SRP068565    human         sra data_sources/sra data_sources        20
+## 58  SRP066865    human         sra data_sources/sra data_sources        24
+## 59  SRP072365    human         sra data_sources/sra data_sources        11
+## 60  SRP163265    human         sra data_sources/sra data_sources         8
+## 61  SRP165165    human         sra data_sources/sra data_sources        12
+## 62  SRP072865    human         sra data_sources/sra data_sources         8
+## 63  SRP066365    human         sra data_sources/sra data_sources        12
+## 64  ERP106765    human         sra data_sources/sra data_sources         6
+## 65  SRP167165    human         sra data_sources/sra data_sources        36
+## 66  ERP109065    human         sra data_sources/sra data_sources         3
+## 67  SRP181265    human         sra data_sources/sra data_sources         8
+## 68  SRP065865    human         sra data_sources/sra data_sources        30
+## 69  SRP182965    human         sra data_sources/sra data_sources        24
+## 70  SRP100165    human         sra data_sources/sra data_sources         4
+## 71  SRP103065    human         sra data_sources/sra data_sources         6
+## 72  SRP142465    human         sra data_sources/sra data_sources         8
+## 73  SRP031765    human         sra data_sources/sra data_sources         1
+## 74  SRP045565    human         sra data_sources/sra data_sources         5
+## 75  SRP071965    human         sra data_sources/sra data_sources       355
+## 76  SRP116165    human         sra data_sources/sra data_sources         4
+## 77  SRP193065    human         sra data_sources/sra data_sources        24
+## 78  SRP119465    human         sra data_sources/sra data_sources       368
+## 79  SRP108765    human         sra data_sources/sra data_sources         4
+## 80  SRP092065    human         sra data_sources/sra data_sources        14
+## 81  SRP070165    human         sra data_sources/sra data_sources         4
+## 82  SRP075965    human         sra data_sources/sra data_sources         6
+## 83  SRP167965    human         sra data_sources/sra data_sources         9
+## 84  SRP211765    human         sra data_sources/sra data_sources         3
+## 85  SRP194165    human         sra data_sources/sra data_sources         6
+## 86  SRP004965    human         sra data_sources/sra data_sources         3
+## 87  SRP073065    human         sra data_sources/sra data_sources         2
+## 88  DRP000665    human         sra data_sources/sra data_sources         7
+## 89  SRP212665    human         sra data_sources/sra data_sources        24
+## 90  SRP116965    human         sra data_sources/sra data_sources        12
+## 91  SRP149965    human         sra data_sources/sra data_sources         6
+## 92  DRP004465    human         sra data_sources/sra data_sources         4
+## 93  SRP137465    human         sra data_sources/sra data_sources         1
+## 94  SRP126765    human         sra data_sources/sra data_sources        12
+## 95  SRP109765    human         sra data_sources/sra data_sources        37
+## 96  SRP096865    human         sra data_sources/sra data_sources        12
+## 97  SRP064165    human         sra data_sources/sra data_sources         8
+## 98  SRP167265    human         sra data_sources/sra data_sources         6
+## 99  SRP149865    human         sra data_sources/sra data_sources        36
+## 100 SRP218865    human         sra data_sources/sra data_sources         8
+## 101 SRP114965    human         sra data_sources/sra data_sources        10
+## 102 SRP051765    human         sra data_sources/sra data_sources        41
+## 103 SRP189565    human         sra data_sources/sra data_sources        38
+## 104 SRP142765    human         sra data_sources/sra data_sources         5
+## 105 SRP062865    human         sra data_sources/sra data_sources        20
+## 106 SRP029365    human         sra data_sources/sra data_sources         4
+## 107 SRP127665    human         sra data_sources/sra data_sources         4
+## 108 SRP095865    human         sra data_sources/sra data_sources         2
+## 109 SRP092165    human         sra data_sources/sra data_sources         2
+## 110 SRP035665    human         sra data_sources/sra data_sources         2
+## 111 SRP108712    human         sra data_sources/sra data_sources        23
+## 112 SRP116312    human         sra data_sources/sra data_sources        12
+## 113 SRP180012    human         sra data_sources/sra data_sources         4
+## 114 SRP185812    human         sra data_sources/sra data_sources         6
+## 115 SRP191312    human         sra data_sources/sra data_sources         2
+## 116 SRP186312    human         sra data_sources/sra data_sources        36
+## 117 SRP219912    human         sra data_sources/sra data_sources         9
+## 118 SRP076812    human         sra data_sources/sra data_sources        16
+## 119 DRP002712    human         sra data_sources/sra data_sources         1
+## 120 SRP066112    human         sra data_sources/sra data_sources         2
+## 121 SRP057512    human         sra data_sources/sra data_sources        10
+## 122 SRP135512    human         sra data_sources/sra data_sources        15
+## 123 SRP103812    human         sra data_sources/sra data_sources        47
+## 124 SRP117312    human         sra data_sources/sra data_sources        36
+## 125 ERP104512    human         sra data_sources/sra data_sources      1908
+## 126 SRP216512    human         sra data_sources/sra data_sources         9
+## 127 SRP066012    human         sra data_sources/sra data_sources        20
+## 128 SRP055512    human         sra data_sources/sra data_sources        12
+## 129 SRP190212    human         sra data_sources/sra data_sources        14
+## 130 SRP113012    human         sra data_sources/sra data_sources        22
+## 131 SRP006912    human         sra data_sources/sra data_sources         5
+## 132 SRP164912    human         sra data_sources/sra data_sources         4
+## 133 SRP095212    human         sra data_sources/sra data_sources         9
+## 134 SRP062212    human         sra data_sources/sra data_sources         7
+## 135 SRP073112    human         sra data_sources/sra data_sources        49
+## 136 SRP028912    human         sra data_sources/sra data_sources        18
+## 137 SRP173312    human         sra data_sources/sra data_sources        12
+## 138 SRP052612    human         sra data_sources/sra data_sources        20
+## 139 SRP121512    human         sra data_sources/sra data_sources        24
+## 140 SRP067012    human         sra data_sources/sra data_sources        12
+## 141 SRP114312    human         sra data_sources/sra data_sources         8
+## 142 SRP097912    human         sra data_sources/sra data_sources        10
+## 143 ERP015612    human         sra data_sources/sra data_sources        30
+## 144 SRP056612    human         sra data_sources/sra data_sources        20
+## 145 SRP166012    human         sra data_sources/sra data_sources         9
+## 146 SRP127412    human         sra data_sources/sra data_sources         8
+## 147 SRP148112    human         sra data_sources/sra data_sources         5
+## 148 SRP065812    human         sra data_sources/sra data_sources        52
+## 149 SRP150612    human         sra data_sources/sra data_sources         9
+## 150 SRP223012    human         sra data_sources/sra data_sources         1
+## 151 SRP066912    human         sra data_sources/sra data_sources         3
+## 152 SRP033612    human         sra data_sources/sra data_sources         1
+## 153 SRP105312    human         sra data_sources/sra data_sources        11
+## 154 SRP067312    human         sra data_sources/sra data_sources         9
+## 155 SRP166112    human         sra data_sources/sra data_sources       864
+## 156 ERP009612    human         sra data_sources/sra data_sources         6
+## 157 SRP144312    human         sra data_sources/sra data_sources         3
+## 158 ERP006112    human         sra data_sources/sra data_sources         2
+## 159 SRP032812    human         sra data_sources/sra data_sources        20
+## 160 SRP061412    human         sra data_sources/sra data_sources         8
+## 161 SRP078912    human         sra data_sources/sra data_sources        34
+## 162 SRP095512    human         sra data_sources/sra data_sources        10
+## 163 SRP150212    human         sra data_sources/sra data_sources         6
+## 164 SRP144912    human         sra data_sources/sra data_sources       770
+## 165 SRP042212    human         sra data_sources/sra data_sources        15
+## 166 SRP056912    human         sra data_sources/sra data_sources         3
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 8576 rows ]</code></pre>
+<p>Una vez descargados y con los números de lecturas podemos usar <code>expand_sra_attributes()</code>. Sin embargo, tenemos un problema con estos datos.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="datos-de-srp045638.html#cb108-1"></a><span class="co"># tiene un development stage fetal que no todos tienen </span></span>
+<span id="cb108-2"><a href="datos-de-srp045638.html#cb108-2"></a>rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;age;;67.78|biomaterial_provider;;LIBD|BioSampleModel;;Human|dev_stage;;Fetal|disease;;Control|Fraction;;total|isolate;;DLPFC|race;;AA|RIN;;8.3|sex;;female|tissue;;DLPFC&quot;
+## [2] &quot;age;;40.42|biomaterial_provider;;LIBD|BioSampleModel;;Human|disease;;Control|Fraction;;total|isolate;;DLPFC|race;;AA|RIN;;8.4|sex;;male|tissue;;DLPFC&quot;                   
+## [3] &quot;age;;41.58|biomaterial_provider;;LIBD|BioSampleModel;;Human|disease;;control|Fraction;;total|isolate;;R2869|race;;AA|RIN;;8.7|sex;;male|tissue;;DLPFC&quot;</code></pre>
+<p>Vamos a intentar resolverlo eliminando información que está presente solo en ciertas muestras.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="datos-de-srp045638.html#cb110-1"></a><span class="co"># gsub permite buscar patrones y cambiarlos, también eliminamos el pipe entonces lo escapamos con \\</span></span>
+<span id="cb110-2"><a href="datos-de-srp045638.html#cb110-2"></a>rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;dev_stage;;Fetal</span><span class="ch">\\</span><span class="st">|&quot;</span>, <span class="st">&quot;&quot;</span>, rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes)</span>
+<span id="cb110-3"><a href="datos-de-srp045638.html#cb110-3"></a><span class="co"># checamos y ya está correcto </span></span>
+<span id="cb110-4"><a href="datos-de-srp045638.html#cb110-4"></a>rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;age;;67.78|biomaterial_provider;;LIBD|BioSampleModel;;Human|disease;;Control|Fraction;;total|isolate;;DLPFC|race;;AA|RIN;;8.3|sex;;female|tissue;;DLPFC&quot;
+## [2] &quot;age;;40.42|biomaterial_provider;;LIBD|BioSampleModel;;Human|disease;;Control|Fraction;;total|isolate;;DLPFC|race;;AA|RIN;;8.4|sex;;male|tissue;;DLPFC&quot;  
+## [3] &quot;age;;41.58|biomaterial_provider;;LIBD|BioSampleModel;;Human|disease;;control|Fraction;;total|isolate;;R2869|race;;AA|RIN;;8.7|sex;;male|tissue;;DLPFC&quot;</code></pre>
+<p>Ahora si podemos continuar con el mismo código de ayer.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="datos-de-srp045638.html#cb112-1"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span><span class="kw">expand_sra_attributes</span>(rse_gene_SRP045638)</span>
+<span id="cb112-2"><a href="datos-de-srp045638.html#cb112-2"></a></span>
+<span id="cb112-3"><a href="datos-de-srp045638.html#cb112-3"></a><span class="kw">colData</span>(rse_gene_SRP045638)[</span>
+<span id="cb112-4"><a href="datos-de-srp045638.html#cb112-4"></a>    ,</span>
+<span id="cb112-5"><a href="datos-de-srp045638.html#cb112-5"></a>    <span class="kw">grepl</span>(<span class="st">&quot;^sra_attribute&quot;</span>, <span class="kw">colnames</span>(<span class="kw">colData</span>(rse_gene_SRP045638)))</span>
+<span id="cb112-6"><a href="datos-de-srp045638.html#cb112-6"></a>]</span></code></pre></div>
+<pre><code>## DataFrame with 66 rows and 10 columns
+##            sra_attribute.age sra_attribute.biomaterial_provider sra_attribute.BioSampleModel sra_attribute.disease
+##                  &lt;character&gt;                        &lt;character&gt;                  &lt;character&gt;           &lt;character&gt;
+## SRR2071341             67.78                               LIBD                        Human               Control
+## SRR2071345             40.42                               LIBD                        Human               Control
+## SRR2071346             41.58                               LIBD                        Human               control
+## SRR2071347             44.17                               LIBD                        Human               control
+## SRR2071348           -0.3836                               LIBD                        Human               control
+## ...                      ...                                ...                          ...                   ...
+## SRR2071366             66.72                               LIBD                        Human               control
+## SRR2071372             43.88                               LIBD                        Human               control
+## SRR2071373             15.17                               LIBD                        Human               control
+## SRR2071374             70.95                               LIBD                        Human               control
+## SRR2071375              4.14                               LIBD                        Human               control
+##            sra_attribute.Fraction sra_attribute.isolate sra_attribute.race sra_attribute.RIN sra_attribute.sex
+##                       &lt;character&gt;           &lt;character&gt;        &lt;character&gt;       &lt;character&gt;       &lt;character&gt;
+## SRR2071341                  total                 DLPFC                 AA               8.3            female
+## SRR2071345                  total                 DLPFC                 AA               8.4              male
+## SRR2071346                  total                 R2869                 AA               8.7              male
+## SRR2071347                  total                 R3098                 AA               5.3            female
+## SRR2071348                  total                 R3452                 AA               9.6            female
+## ...                           ...                   ...                ...               ...               ...
+## SRR2071366                  total                 R3763               CAUC                 7            female
+## SRR2071372                  total                 R4166                 AA               8.7              male
+## SRR2071373                  total                 R4196               CAUC               7.9            female
+## SRR2071374                  total                 R4338                 AS               8.3              male
+## SRR2071375                  total                 R4699               CAUC               8.7              male
+##            sra_attribute.tissue
+##                     &lt;character&gt;
+## SRR2071341                DLPFC
+## SRR2071345                DLPFC
+## SRR2071346                DLPFC
+## SRR2071347                DLPFC
+## SRR2071348                DLPFC
+## ...                         ...
+## SRR2071366                DLPFC
+## SRR2071372                DLPFC
+## SRR2071373                DLPFC
+## SRR2071374                DLPFC
+## SRR2071375                DLPFC</code></pre>
+<p>Como ahora si vamos a usar esta información para un modelo estadístico, será importante que tengamos en el formato correcto de R a la información que vamos a usar.
+- Vamos a recompertir al objeto de R que queremos
+- RIN es RNA integrity number (se usa para ver qué tan bien está la muestra, valores más altos son mejores. Se intenta usar RIN 7 o más )</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="datos-de-srp045638.html#cb114-1"></a><span class="co">## Pasar de character a nuemric o factor</span></span>
+<span id="cb114-2"><a href="datos-de-srp045638.html#cb114-2"></a><span class="co"># volvemos numericos</span></span>
+<span id="cb114-3"><a href="datos-de-srp045638.html#cb114-3"></a>rse_gene_SRP045638<span class="op">$</span>sra_attribute.age &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(rse_gene_SRP045638<span class="op">$</span>sra_attribute.age)</span>
+<span id="cb114-4"><a href="datos-de-srp045638.html#cb114-4"></a><span class="co"># volvemos categóricos</span></span>
+<span id="cb114-5"><a href="datos-de-srp045638.html#cb114-5"></a>rse_gene_SRP045638<span class="op">$</span>sra_attribute.disease &lt;-<span class="st"> </span><span class="kw">factor</span>(rse_gene_SRP045638<span class="op">$</span>sra_attribute.disease)</span>
+<span id="cb114-6"><a href="datos-de-srp045638.html#cb114-6"></a>rse_gene_SRP045638<span class="op">$</span>sra_attribute.RIN &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(rse_gene_SRP045638<span class="op">$</span>sra_attribute.RIN)</span>
+<span id="cb114-7"><a href="datos-de-srp045638.html#cb114-7"></a>rse_gene_SRP045638<span class="op">$</span>sra_attribute.sex &lt;-<span class="st"> </span><span class="kw">factor</span>(rse_gene_SRP045638<span class="op">$</span>sra_attribute.sex)</span>
+<span id="cb114-8"><a href="datos-de-srp045638.html#cb114-8"></a></span>
+<span id="cb114-9"><a href="datos-de-srp045638.html#cb114-9"></a><span class="co">## Resumen de las variables de interés</span></span>
+<span id="cb114-10"><a href="datos-de-srp045638.html#cb114-10"></a><span class="kw">summary</span>(<span class="kw">as.data.frame</span>(<span class="kw">colData</span>(rse_gene_SRP045638)[</span>
+<span id="cb114-11"><a href="datos-de-srp045638.html#cb114-11"></a>    ,</span>
+<span id="cb114-12"><a href="datos-de-srp045638.html#cb114-12"></a>    <span class="kw">grepl</span>(<span class="st">&quot;^sra_attribute.[age|disease|RIN|sex]&quot;</span>, <span class="kw">colnames</span>(<span class="kw">colData</span>(rse_gene_SRP045638)))</span>
+<span id="cb114-13"><a href="datos-de-srp045638.html#cb114-13"></a>]))</span></code></pre></div>
+<pre><code>##  sra_attribute.age sra_attribute.disease sra_attribute.isolate sra_attribute.RIN sra_attribute.sex
+##  Min.   :-0.4986   control:62            Length:66             Min.   :5.30      female:22        
+##  1st Qu.: 0.3424   Control: 4            Class :character      1st Qu.:8.00      male  :44        
+##  Median :14.9000                         Mode  :character      Median :8.30                       
+##  Mean   :22.6286                                               Mean   :8.15                       
+##  3rd Qu.:41.2900                                               3rd Qu.:8.70                       
+##  Max.   :73.9100                                               Max.   :9.60</code></pre>
+<p>Ahora crearemos un par de variables para que las podamos usar en nuestro análisis.</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="datos-de-srp045638.html#cb116-1"></a><span class="co">## Encontraremos diferencias entre muestra prenatalas vs postnatales</span></span>
+<span id="cb116-2"><a href="datos-de-srp045638.html#cb116-2"></a><span class="co"># si la edad es menor a 0 entonces es prenatal si no es postnatal </span></span>
+<span id="cb116-3"><a href="datos-de-srp045638.html#cb116-3"></a><span class="co"># el cerebro prentatal y postnatal cambia mucho </span></span>
+<span id="cb116-4"><a href="datos-de-srp045638.html#cb116-4"></a>rse_gene_SRP045638<span class="op">$</span>prenatal &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">ifelse</span>(rse_gene_SRP045638<span class="op">$</span>sra_attribute.age <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;prenatal&quot;</span>, <span class="st">&quot;postnatal&quot;</span>))</span>
+<span id="cb116-5"><a href="datos-de-srp045638.html#cb116-5"></a><span class="kw">table</span>(rse_gene_SRP045638<span class="op">$</span>prenatal)</span></code></pre></div>
+<pre><code>## 
+## postnatal  prenatal 
+##        56        10</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="datos-de-srp045638.html#cb118-1"></a><span class="co">## http://research.libd.org/recount3-docs/docs/quality-check-fields.html</span></span>
+<span id="cb118-2"><a href="datos-de-srp045638.html#cb118-2"></a><span class="co"># En recount3 alineamos contra una versión específica de anota</span></span>
+<span id="cb118-3"><a href="datos-de-srp045638.html#cb118-3"></a><span class="co"># Da información de la calidad de los datos </span></span>
+<span id="cb118-4"><a href="datos-de-srp045638.html#cb118-4"></a><span class="co"># Numero de lecturas asignadas a genes / numero total de lecturas que le dimos a featurecounts </span></span>
+<span id="cb118-5"><a href="datos-de-srp045638.html#cb118-5"></a><span class="co"># usando rnaSeq existe el protocolo de polyA o ribozero que son dos tipos de librerias </span></span>
+<span id="cb118-6"><a href="datos-de-srp045638.html#cb118-6"></a><span class="co"># intentamos capturar RNA mensajero, muchas de nuestras lecturas pueden provenir de eotras partes # Este porcentaje nos puede ayudar a determinar si hay un problema de calidad en las muestras </span></span>
+<span id="cb118-7"><a href="datos-de-srp045638.html#cb118-7"></a><span class="co"># with(colData(rse_gene_SR))</span></span>
+<span id="cb118-8"><a href="datos-de-srp045638.html#cb118-8"></a><span class="co"># Se intentan generar al rededor de 80 millones de lecturas </span></span>
+<span id="cb118-9"><a href="datos-de-srp045638.html#cb118-9"></a><span class="co"># Si no pudiste generar tantos datos entonces necesitas más réplicas (no lo vimos en 4 muestras entonces probablemente no está expresado)</span></span>
+<span id="cb118-10"><a href="datos-de-srp045638.html#cb118-10"></a>    </span>
+<span id="cb118-11"><a href="datos-de-srp045638.html#cb118-11"></a>rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop &lt;-<span class="st"> </span>rse_gene_SRP045638<span class="op">$</span>recount_qc.gene_fc_count_all.assigned <span class="op">/</span><span class="st"> </span>rse_gene_SRP045638<span class="op">$</span>recount_qc.gene_fc_count_all.total</span>
+<span id="cb118-12"><a href="datos-de-srp045638.html#cb118-12"></a><span class="co"># Nos indica que tal vez hay muestras malas </span></span>
+<span id="cb118-13"><a href="datos-de-srp045638.html#cb118-13"></a><span class="kw">summary</span>(rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.1942  0.7004  0.7591  0.7170  0.7991  0.8493</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="datos-de-srp045638.html#cb120-1"></a><span class="co">## Hm... veamos si hay una diferencia entre los grupos</span></span>
+<span id="cb120-2"><a href="datos-de-srp045638.html#cb120-2"></a><span class="co"># se puede usar purr </span></span>
+<span id="cb120-3"><a href="datos-de-srp045638.html#cb120-3"></a><span class="co"># with te ayuda a a indicar que todas las variables viven en colData y ya no pones $</span></span>
+<span id="cb120-4"><a href="datos-de-srp045638.html#cb120-4"></a><span class="co"># la media es muy similar entre los dos grupos así como la mediana entre pre y postnatal</span></span>
+<span id="cb120-5"><a href="datos-de-srp045638.html#cb120-5"></a><span class="kw">with</span>(<span class="kw">colData</span>(rse_gene_SRP045638), <span class="kw">tapply</span>(assigned_gene_prop, prenatal, summary))</span></code></pre></div>
+<pre><code>## $postnatal
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.1942  0.7072  0.7719  0.7179  0.8017  0.8493 
+## 
+## $prenatal
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6856  0.7004  0.7088  0.7116  0.7259  0.7347</code></pre>
+<p>A continuación podemos eliminar algunas muestras que consideremos de baja calidad y genes con niveles de expresión muy bajos.</p>
+<p>Promedios de expresión a lo largo de las muestras</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="datos-de-srp045638.html#cb122-1"></a><span class="co">## Guardemos nuestro objeto entero por si luego cambiamos de opinión</span></span>
+<span id="cb122-2"><a href="datos-de-srp045638.html#cb122-2"></a>rse_gene_SRP045638_unfiltered &lt;-<span class="st"> </span>rse_gene_SRP045638</span>
+<span id="cb122-3"><a href="datos-de-srp045638.html#cb122-3"></a></span>
+<span id="cb122-4"><a href="datos-de-srp045638.html#cb122-4"></a><span class="co">## Eliminemos a muestras malas</span></span>
+<span id="cb122-5"><a href="datos-de-srp045638.html#cb122-5"></a><span class="kw">hist</span>(rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop)</span></code></pre></div>
+<p><img src="_main_files/figure-html/filter_rse-1.png" width="672" /></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="datos-de-srp045638.html#cb123-1"></a><span class="kw">table</span>(rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.3</span>)</span></code></pre></div>
+<pre><code>## 
+## FALSE  TRUE 
+##    65     1</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="datos-de-srp045638.html#cb125-1"></a><span class="co"># me quedo con las mayores a 0.3</span></span>
+<span id="cb125-2"><a href="datos-de-srp045638.html#cb125-2"></a><span class="co"># Podríamos eliminar tambien de baja calidad de RIN</span></span>
+<span id="cb125-3"><a href="datos-de-srp045638.html#cb125-3"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span>rse_gene_SRP045638[, rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.3</span>]</span>
+<span id="cb125-4"><a href="datos-de-srp045638.html#cb125-4"></a></span>
+<span id="cb125-5"><a href="datos-de-srp045638.html#cb125-5"></a><span class="co">## Calculemos los niveles medios de expresión de los genes en nuestras</span></span>
+<span id="cb125-6"><a href="datos-de-srp045638.html#cb125-6"></a><span class="co">## muestras.</span></span>
+<span id="cb125-7"><a href="datos-de-srp045638.html#cb125-7"></a><span class="co">## Ojo: en un análisis real probablemente haríamos esto con los RPKMs o CPMs</span></span>
+<span id="cb125-8"><a href="datos-de-srp045638.html#cb125-8"></a><span class="co">## en vez de las cuentas.</span></span>
+<span id="cb125-9"><a href="datos-de-srp045638.html#cb125-9"></a>gene_means &lt;-<span class="st"> </span><span class="kw">rowMeans</span>(<span class="kw">assay</span>(rse_gene_SRP045638, <span class="st">&quot;counts&quot;</span>))</span>
+<span id="cb125-10"><a href="datos-de-srp045638.html#cb125-10"></a><span class="co"># 1st qu es muy bajo .1 25% de nuestros genes casi no tienen datos </span></span>
+<span id="cb125-11"><a href="datos-de-srp045638.html#cb125-11"></a></span>
+<span id="cb125-12"><a href="datos-de-srp045638.html#cb125-12"></a><span class="kw">summary</span>(gene_means)</span></code></pre></div>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+##       0.0       0.1       2.5     817.5     171.2 1362047.9</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="datos-de-srp045638.html#cb127-1"></a><span class="kw">length</span>(gene_means)</span></code></pre></div>
+<pre><code>## [1] 63856</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="datos-de-srp045638.html#cb129-1"></a><span class="co">## Eliminamos genes</span></span>
+<span id="cb129-2"><a href="datos-de-srp045638.html#cb129-2"></a><span class="co"># nos quedamos con al rededor de 75% de los genes </span></span>
+<span id="cb129-3"><a href="datos-de-srp045638.html#cb129-3"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span>rse_gene_SRP045638[gene_means <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.1</span>, ]</span>
+<span id="cb129-4"><a href="datos-de-srp045638.html#cb129-4"></a></span>
+<span id="cb129-5"><a href="datos-de-srp045638.html#cb129-5"></a><span class="co">## Dimensiones finales</span></span>
+<span id="cb129-6"><a href="datos-de-srp045638.html#cb129-6"></a><span class="kw">dim</span>(rse_gene_SRP045638)</span></code></pre></div>
+<pre><code>## [1] 46932    65</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="datos-de-srp045638.html#cb131-1"></a><span class="co">## Porcentaje de genes que retuvimos</span></span>
+<span id="cb131-2"><a href="datos-de-srp045638.html#cb131-2"></a><span class="kw">round</span>(<span class="kw">nrow</span>(rse_gene_SRP045638) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(rse_gene_SRP045638_unfiltered) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 73.5</code></pre>
+<p>Ahora ya estamos listos para continuar con el análisis de expresión diferencial, bueno, casi.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exploremodelmatrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="normalización-de-datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -4,7 +4,6 @@ author: "Leonardo Collado-Torres,  Alfredo Varela Vega"
 email: avarela@lcg.unam.mx
 date: "`r Sys.Date()`"
 site: bookdwon::bookdown_site
-documentclass: book 
 description: "Book from first module of Bioinformática 2"
 output:
   bookdown::gitbook:
