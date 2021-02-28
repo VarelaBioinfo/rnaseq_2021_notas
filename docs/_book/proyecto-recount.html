@@ -255,25 +255,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb63-2"><a href="proyecto-recount.html#cb63-2"></a><span class="co"># Encuentra tu proyecto de interés. Aquí usaremos</span></span>
 <span id="cb63-3"><a href="proyecto-recount.html#cb63-3"></a><span class="co">## SRP009615 de ejemplo</span></span>
 <span id="cb63-4"><a href="proyecto-recount.html#cb63-4"></a>human_projects&lt;-<span class="kw">available_projects</span>()</span></code></pre></div>
-<pre><code>## 2021-02-28 13:09:06 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:07 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:08 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:04 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:05 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:06 caching file tcga.recount_project.MD.gz.</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="proyecto-recount.html#cb67-1"></a>proj_info &lt;-<span class="st"> </span><span class="kw">subset</span>(</span>
 <span id="cb67-2"><a href="proyecto-recount.html#cb67-2"></a>    human_projects,</span>
 <span id="cb67-3"><a href="proyecto-recount.html#cb67-3"></a>    project <span class="op">==</span><span class="st"> &quot;SRP009615&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
 <span id="cb67-4"><a href="proyecto-recount.html#cb67-4"></a>)</span>
 <span id="cb67-5"><a href="proyecto-recount.html#cb67-5"></a>rse_gene_SRP009615&lt;-<span class="st"> </span><span class="kw">create_rse</span>(proj_info)</span></code></pre></div>
-<pre><code>## 2021-02-28 13:09:14 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-28 13:09:16 caching file sra.sra.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:18 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:19 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:20 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:21 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:24 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-28 13:09:24 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:25 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-28 13:09:28 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
-<pre><code>## 2021-02-28 13:09:29 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>## 2021-02-28 13:24:11 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-28 13:24:14 caching file sra.sra.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:15 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:16 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:17 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:19 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:21 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-28 13:24:22 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:23 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-28 13:24:25 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
+<pre><code>## 2021-02-28 13:24:26 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="proyecto-recount.html#cb79-1"></a><span class="co">## ----&quot;tranform_counts&quot;-----------------------------------------------------------------------------</span></span>
 <span id="cb79-2"><a href="proyecto-recount.html#cb79-2"></a><span class="co">## Convirtamos las cuentas por nucleotido a cuentas por lectura</span></span>
 <span id="cb79-3"><a href="proyecto-recount.html#cb79-3"></a><span class="co">## usando compute_read_counts().</span></span>
