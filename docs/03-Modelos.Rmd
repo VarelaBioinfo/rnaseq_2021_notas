@@ -20,7 +20,7 @@ colnames(mat)
 
 * ¿Cómo interpretamos los nombres de las columnas de `mat`?
 
-Para cada uno de nuestros betas tenemos dos valores 
+Para cada uno de nuestros betas tenemos otros dos valores 
     - Valor estimado 
     - desciiación estandar 
     - Valor t si ese beta es significativemten

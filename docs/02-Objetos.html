@@ -358,7 +358,7 @@ pre code {
 </div>
 <div id="summarized-experiment-tipo-de-objeto" class="section level2">
 <h2>Summarized Experiment (tipo de objeto)</h2>
-<p>Construido con programación orientada a objetos</p>
+<p>Est objeto es construido con programación orientada a objetos</p>
 <ul>
 <li>Core
 <ul>
@@ -1060,9 +1060,7 @@ library(&quot;iSEE&quot;)</code></pre>
 ## Descarguemos unos datos de spatialLIBD
 sce_layer &lt;- spatialLIBD::fetch_data(&quot;sce_layer&quot;)</code></pre>
 <pre><code>## snapshotDate(): 2020-10-27</code></pre>
-<pre><code>## using temporary cache /var/folders/kc/yp3tpcv95bjfw4sq61_fmnxh0000gn/T//RtmpokJcTP/BiocFileCache</code></pre>
-<pre><code>## adding rname &#39;https://www.dropbox.com/s/bg8xwysh2vnjwvg/Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata?dl=1&#39;</code></pre>
-<pre><code>## 2021-02-27 14:23:56 loading file /var/folders/kc/yp3tpcv95bjfw4sq61_fmnxh0000gn/T//RtmpokJcTP/BiocFileCache/1b7acb91c5b_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
+<pre><code>## 2021-02-28 12:12:17 loading file ~/Library/Caches/BiocFileCache/1cd24a5a297e_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
 <pre class="r"><code>sce_layer</code></pre>
 <pre><code>## class: SingleCellExperiment 
 ## dim: 22331 76 
@@ -1095,7 +1093,7 @@ iSEE::iSEE(rse)</code></pre>
 ## Descarguemos unos datos de spatialLIBD
 sce_layer &lt;- spatialLIBD::fetch_data(&quot;sce_layer&quot;)</code></pre>
 <pre><code>## snapshotDate(): 2020-10-27</code></pre>
-<pre><code>## 2021-02-27 14:24:00 loading file /var/folders/kc/yp3tpcv95bjfw4sq61_fmnxh0000gn/T//RtmpokJcTP/BiocFileCache/1b7acb91c5b_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
+<pre><code>## 2021-02-28 12:12:22 loading file ~/Library/Caches/BiocFileCache/1cd24a5a297e_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
 <pre class="r"><code>sce_layer</code></pre>
 <pre><code>## class: SingleCellExperiment 
 ## dim: 22331 76 
@@ -1192,25 +1190,25 @@ iSEE::iSEE(rse_gene_SRP009615)</code></pre>
 # Encuentra tu proyecto de interés. Aquí usaremos
 ## SRP009615 de ejemplo
 human_projects&lt;-available_projects()</code></pre>
-<pre><code>## 2021-02-27 14:24:07 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:09 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:11 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:28 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:29 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:30 caching file tcga.recount_project.MD.gz.</code></pre>
 <pre class="r"><code>proj_info &lt;- subset(
     human_projects,
     project == &quot;SRP009615&quot; &amp; project_type == &quot;data_sources&quot;
 )
 rse_gene_SRP009615&lt;- create_rse(proj_info)</code></pre>
-<pre><code>## 2021-02-27 14:24:20 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-27 14:24:23 caching file sra.sra.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:24 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:25 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:26 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:27 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:30 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-27 14:24:31 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:32 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-27 14:24:34 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
-<pre><code>## 2021-02-27 14:24:35 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>## 2021-02-28 12:12:39 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-28 12:12:41 caching file sra.sra.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:42 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:43 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:44 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:45 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:48 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-28 12:12:49 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:50 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-28 12:12:52 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
+<pre><code>## 2021-02-28 12:12:53 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
 <pre class="r"><code>## ----&quot;tranform_counts&quot;-----------------------------------------------------------------------------
 ## Convirtamos las cuentas por nucleotido a cuentas por lectura
 ## usando compute_read_counts().

@@ -408,7 +408,7 @@ mat</code></pre>
 <ul>
 <li>¿Cómo interpretamos los nombres de las columnas de <code>mat</code>?</li>
 </ul>
-<p>Para cada uno de nuestros betas tenemos dos valores - Valor estimado - desciiación estandar - Valor t si ese beta es significativemten - P value - Buscamos que el valor p sea menor a 0.05 de nuestra muestra</p>
+<p>Para cada uno de nuestros betas tenemos otros dos valores - Valor estimado - desciiación estandar - Valor t si ese beta es significativemten - P value - Buscamos que el valor p sea menor a 0.05 de nuestra muestra</p>
 <p>x1 = log(height) x2= log (grith)</p>
 <p>Si tenemos 20 mil genes tenemos 20 mil regresiones lineales</p>
 <pre class="r"><code>summary(lm(log(Volume) ~ log(Height) + log(Girth), data = trees))</code></pre>
@@ -575,26 +575,26 @@ if (interactive()) shiny::runApp(app)</code></pre>
 ## 
 ##     anyMissing, rowMedians</code></pre>
 <pre class="r"><code>human_projects &lt;- available_projects()</code></pre>
-<pre><code>## 2021-02-27 14:25:28 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:29 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:30 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:23 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:24 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:25 caching file tcga.recount_project.MD.gz.</code></pre>
 <pre class="r"><code>rse_gene_SRP045638 &lt;- create_rse(
     subset(
         human_projects,
         project == &quot;SRP045638&quot; &amp; project_type == &quot;data_sources&quot;
     )
 )</code></pre>
-<pre><code>## 2021-02-27 14:25:37 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-27 14:25:41 caching file sra.sra.SRP045638.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:42 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:44 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:45 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:47 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:49 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-27 14:25:50 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:51 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-27 14:25:53 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
-<pre><code>## 2021-02-27 14:25:54 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>## 2021-02-28 12:13:33 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-28 12:13:36 caching file sra.sra.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:37 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:38 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:39 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:40 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:42 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-28 12:13:43 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:44 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-28 12:13:46 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
+<pre><code>## 2021-02-28 12:13:47 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
 <pre class="r"><code>assay(rse_gene_SRP045638, &quot;counts&quot;) &lt;- compute_read_counts(rse_gene_SRP045638)
 human_projects</code></pre>
 <pre><code>##              project organism file_source      project_home project_type
@@ -18276,7 +18276,7 @@ round(nrow(rse_gene_SRP045638) / nrow(rse_gene_SRP045638_unfiltered) * 100, 2)</
 <pre><code>## Installing package(s) &#39;edgeR&#39;</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/kc/yp3tpcv95bjfw4sq61_fmnxh0000gn/T//RtmpVIkMqA/downloaded_packages</code></pre>
+##  /var/folders/kc/yp3tpcv95bjfw4sq61_fmnxh0000gn/T//RtmpqNJTAq/downloaded_packages</code></pre>
 <pre class="r"><code># PAquete antes de que existiera SummarizedExperiment object
 library(&quot;edgeR&quot;) </code></pre>
 <pre><code>## Loading required package: limma</code></pre>

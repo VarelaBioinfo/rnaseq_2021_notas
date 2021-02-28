@@ -4,7 +4,7 @@
 
 
 ## Summarized Experiment (tipo de objeto)
-Construido con programación orientada a objetos 
+Est objeto es construido con programación orientada a objetos 
 
 - Core
   - rowRanges
@@ -175,11 +175,11 @@ pryr::object_size(sce_layer)
 
 # Ejercicio Reproducir imagen en 3.4 y agregar a repositorio
 
-![PCA1vs2](/Users/avarela/rnaseq_2021_notas/R/ReducedDimensionPlot1.pdf)
+![PCA1vs2](/Users/avarela/rnaseq_2021_notas/docs/ReducedDimensionPlot1.pdf)
 
 # Ejercicio 2 Realizar el heatmap 
 MBP y MOBP son los que más se relacionan en White Matter
-![MOBP_MBP_PCP4](/Users/avarela/rnaseq_2021_notas/R/ComplexHeatmapPlot1.pdf)
+![MOBP_MBP_PCP4](/Users/avarela/rnaseq_2021_notas/docs/ComplexHeatmapPlot1.pdf)
 
 # Proyecto Recount 
 - 70 mil muestras de RNA-seq uniformemente procesaadas
