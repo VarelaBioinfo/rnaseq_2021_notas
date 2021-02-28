@@ -6,6 +6,7 @@ date: "`r Sys.Date()`"
 site: bookdwon::bookdown_site
 description: "Book from first module of Bioinformática 2"
 output:
+  output_dir: "docs"
   bookdown::gitbook:
     lib_dir: assets
     split_by: section
